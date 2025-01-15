@@ -33,21 +33,21 @@
         <h2>各マークの解説</h2>
     <div class="mark-row">
         <div class="mark-item">
-            <img src="画像を入れる予定" alt="スペード">
+            <!-- <img src="画像を入れる予定" alt="スペード"> -->
             <p>他のプレイヤーのエレメントを2ポイント弱体化させるが、次のターンはカードを出せない。</p>
         </div>
         <div class="mark-item">
-            <img src="画像を入れる予定" alt="ハート">
+            <!-- <img src="画像を入れる予定" alt="ハート"> -->
             <p>自分のエレメントを1ポイント強化する。</p>
         </div>
     </div>
     <div class="mark-row">
         <div class="mark-item">
-            <img src="画像を入れる予定" alt="ダイヤ">
+            <!-- <img src="画像を入れる予定" alt="ダイヤ"> -->
             <p>他のプレイヤーのエレメントを1ポイント弱体化させる。</p>
         </div>
         <div class="mark-item">
-            <img src="画像を入れる予定" alt="クローバー">
+            <!-- <img src="画像を入れる予定" alt="クローバー"> -->
             <p>自分のエレメントを2ポイント強化するが、次のターンはカードを引けない。</p>
         </div>
     </div>
@@ -66,7 +66,12 @@
         <p>&copy; 2025 Element_Battle</p>
     </footer>
 
-    <!-- JSファイルの読み込み -->
-    <script src="JS/main.js"></script>
+    <script>
+        /* タイトル画面からゲーム画面の移動 */
+    document.getElementById('start-button').addEventListener('click',function(){
+    window.location.href = 'HTML/game.html'
+    })
+    </script>
+    
 </body>
 </html>
