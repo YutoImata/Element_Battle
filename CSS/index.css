@@ -8,7 +8,6 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 }
 
 /* 上部のレイアウト */
@@ -24,6 +23,7 @@ header {
 /* ゲームタイトル */
 h1 {
     margin: 0;
+    font-size: 50px;
 }
 
 /* main部分のレイアウト */
@@ -33,7 +33,7 @@ main {
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 80%;
-    max-width: 600px;
+    max-width: 800px;
 }
 
 #game-board {
@@ -79,6 +79,61 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+ /* ルール説明のレイアウト */
+ #game-rules {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    width: 80%;
+    max-width: 800px;
+}
+
+#game-rules h2 {
+    text-align: center;
+    color: #4CAF50;
+} 
+
+#game-rules p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+}
+
+#game-rules ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+#game-rules ul {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+}
+
+/* マーク解説セクションのレイアウト */
+.mark-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.mark-item {
+    background-color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    width: 45%;
+    font-size: 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/* ページ下部のレイアウト */
 
 footer {
     margin-top: 20px;

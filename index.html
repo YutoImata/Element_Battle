@@ -5,10 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Element_Battle</title>
     <link rel="stylesheet" href="CSS/index.css">
+    <!-- font-awesomeの読み込み（もしかしたらやめるかも） -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <h1>Element_Battle</h1>
+        <h1>Element Battle</h1>
     </header>
 
     <main>
@@ -37,6 +39,45 @@
             </div>
         </section>
     </main>
+
+    <!-- ルール説明セクション -->
+     <section id="game-rules">
+        <h2>ルール説明</h2>
+        <p>
+            Element Battleは自分の手札を使用し「Element」を強化して、
+            先にElement Pointが10点に達したほうが勝ちです！
+        </p>
+
+        <ul>
+            <li>各プレイヤーに５枚のカードを配ります</li>
+            <li>山札から１枚カードを引き、手札から１枚カードを場に出します</li>
+            <li>カードのマークに応じて「エレメント」が発動します</li>
+            <li>Element Pointが10点に達したほうが勝ちです！</li>
+        </ul>
+
+        <h2>各マークの解説</h2>
+    <div class="mark-row">
+        <div class="mark-item">
+            <img src="画像を入れる予定" alt="スペード">
+            <p>他のプレイヤーのエレメントを2ポイント弱体化させるが、次のターンはカードを出せない。</p>
+        </div>
+        <div class="mark-item">
+            <img src="画像を入れる予定" alt="ハート">
+            <p>自分のエレメントを1ポイント強化する。</p>
+        </div>
+    </div>
+    <div class="mark-row">
+        <div class="mark-item">
+            <img src="画像を入れる予定" alt="ダイヤ">
+            <p>他のプレイヤーのエレメントを1ポイント弱体化させる。</p>
+        </div>
+        <div class="mark-item">
+            <img src="p画像を入れる予定" alt="クローバー">
+            <p>自分のエレメントを2ポイント強化するが、次のターンはカードを引けない。</p>
+        </div>
+    </div>
+
+     </section>
 
     <footer>
         <p>&copy; 2025 Element_Battle</p>

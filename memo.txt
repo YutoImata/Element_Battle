@@ -1,0 +1,4 @@
+アイコンのURL(font awesome)
+https://fontawesome.com/icons/cards?s=solid
+↑有料版が多かったため以下のサイトから画像としてダウンロードしてから画像の大きさを調整する方法にしようと思っている
+https://icons8.com/icons/set/card-suit
