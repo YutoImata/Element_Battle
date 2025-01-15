@@ -7,7 +7,33 @@
     <link rel="stylesheet" href="CSS/index.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Element_Battle</h1>
+    </header>
+
+    <main>
+        <section id="game-board">
+            <div id="player-hand">
+                <h2>あなたの手札</h2>
+                <div id="cards"></div>
+            </div>
+
+            <div id="element-status">
+                <h2>Element Point</h2>
+                <div id="player-element">あなた：<span id="player-points">0</span></div>
+                <div id="opponent-element">相手<span id="opponent-points">0</span></div>
+            </div>
+
+            <div id="actions">
+                <button id="draw-card">カードを引く</button>
+                <button id="play-card">カードを出す</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Element_Battle</p>
+    </footer>
 
     <!-- JSファイルの読み込み -->
     <script src="JS/main.js"></script>
