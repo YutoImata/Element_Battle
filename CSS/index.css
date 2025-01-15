@@ -26,59 +26,6 @@ h1 {
     font-size: 50px;
 }
 
-/* main部分のレイアウト */
-main {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 800px;
-}
-
-#game-board {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-#player-hand, #player-hand, #element-status, #actions {
-    margin : 40px 0;
-}
-
-#cards {
-    display: flex;
-    gap: 10px;
-}
-
-#element-status {
-    display: flex;
-    justify-content: space-around; /* フレックスコンテナ内のアイテムを水平方向に均等に配置するために使う */
-    width: 100%;
-    gap: 20px;
-}
-
-#element-status div {
-    background-color: #e0e0e0;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    width: 45%;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #45a049;
-}
 
  /* ルール説明のレイアウト */
  #game-rules {
@@ -130,6 +77,39 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+/* start buttonのレイアウト */
+#start-game {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#start-button {
+    background: linear-gradient(90deg, red, yellow, green, blue, red );
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s;
+    background-size: 400%; /* グラデーションの繰り返しを設定 */
+    animation: gradientAnimation 5s infinite; /* アニメーションの追加 */
+}
+
+#start-button:hover {
+    background: linear-gradient(90deg, red, yellow, green, blue, red );
+    background-size: 400%;
+    animation: gradientAnimation 5s infinite;
+    transform: scale(1.1); /* 手前側に浮き出ているようなアニメーション */
+}
+
+/* グラデーションのアニメーション */
+@keyframes gradientAnimation {
+    0%{ background-position: 0% 50%;}
+    50% { background-position: 100% 50%;}
+    100% { background-position: 0% 50%;}
 }
 
 

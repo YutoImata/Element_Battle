@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Element_Battle</title>
+    <title>タイトル画面</title>
     <link rel="stylesheet" href="CSS/index.css">
     <!-- font-awesomeの読み込み（もしかしたらやめるかも） -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -13,32 +13,7 @@
         <h1>Element Battle</h1>
     </header>
 
-    <main>
-        <section id="game-board">
-
-            <div id="element-status">
-                <h2>Element Point</h2>
-                <div id="player-element">あなた：<span id="player-points">0</span></div>
-                <div id="opponent-element">相手<span id="opponent-points">0</span></div>
-            </div>
-
-            <div id="opponent-hand">
-                <h2>相手の手札</h2>
-                <div id="cards"></div>
-            </div>
-
-            <div id="player-hand">
-                <h2>あなたの手札</h2>
-                <div id="cards"></div>
-            </div>
-
-
-            <div id="actions">
-                <button id="draw-card">カードを引く</button>
-                <button id="play-card">カードを出す</button>
-            </div>
-        </section>
-    </main>
+   
 
     <!-- ルール説明セクション -->
      <section id="game-rules">
@@ -72,12 +47,20 @@
             <p>他のプレイヤーのエレメントを1ポイント弱体化させる。</p>
         </div>
         <div class="mark-item">
-            <img src="p画像を入れる予定" alt="クローバー">
+            <img src="画像を入れる予定" alt="クローバー">
             <p>自分のエレメントを2ポイント強化するが、次のターンはカードを引けない。</p>
         </div>
     </div>
-
      </section>
+
+
+     <!-- ゲームスタートボタンの配置 -->
+     <main>
+        <section id="start-game">
+            <button id="start-button">Game Start</button>
+        </section>
+    </main>
+
 
     <footer>
         <p>&copy; 2025 Element_Battle</p>
