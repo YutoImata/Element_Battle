@@ -6,3 +6,6 @@ https://icons8.com/icons/set/card-suit
 ～あとやりたいこと～
 ・JSでゲームを作成
 ・特別ルールの追加
+
+～次回すること～
+・cards.jsで作成したメソッドを、main.jsで読み込めるようにすること
