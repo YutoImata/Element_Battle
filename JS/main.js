@@ -1,6 +1,3 @@
-/* ほかのファイルを読み込む */
-import Deck from './cards.js';
-
-/* デッキを初期化してシャッフルをする */
+// グローバル変数からクラスを使用
 const deck = new Deck();
-deck.shuffle(); 
+deck.shuffle();

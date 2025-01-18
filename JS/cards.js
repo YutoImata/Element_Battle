@@ -1,8 +1,16 @@
 /* デッキの定義 */
-class Deck {
-    constructor(){
-        this.cards = []; /* カードを格納 */
-        this.initializeDeck(); /* デッキの初期化 */
+/*別のJSファイルで呼び出すためグローバル変数にする */
+window.Card = class {
+    constructor(suit, rank) {
+        this.suit = suit;
+        this.rank = rank;
+    }
+};
+
+window.Deck = class {
+    constructor() {
+        this.cards = [];
+        this.initializeDeck();
     }
 
     /* デッキを初期化するメソッドの定義 */
@@ -36,6 +44,3 @@ class Deck {
         return this.cards.pop(); /* pop:スタックの「後入れ先出し（LIFO: Last In, First Out）」*/
     }
 }
-
-/* ほかのファイルでもメソッドが使用できるようにする */
-// export default Deck;
