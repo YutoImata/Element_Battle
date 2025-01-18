@@ -5,6 +5,11 @@ window.Card = class {
         this.suit = suit;
         this.rank = rank;
     }
+
+    /* カードの情報を文字列として返すメソッドを追加 */
+    toString() {
+        return `${this.suit}${this.rank}`;
+    }
 };
 
 window.Deck = class {
@@ -36,7 +41,7 @@ window.Deck = class {
             const j = Math.floor(Math.random() * (i + 1));
             [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
         }
-        console.log(this.cards); /* デッキの内容を確認 */
+        console.log(this.cards.map(card => card.toString())); /* デッキの内容を確認 */
     }
 
     /* カードを1枚引くメソッド */
