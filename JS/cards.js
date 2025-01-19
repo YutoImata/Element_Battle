@@ -33,6 +33,8 @@ window.Deck = class {
         /* Jokerを追加 */
         this.cards.push(new Card('Joker', ''));
         this.cards.push(new Card('Joker', ''));
+
+                // console.log(this.cards.map(card => card.toString())); /* デッキの内容を確認 */
     }
 
     /* カードを混ぜる処理 */
