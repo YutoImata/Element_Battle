@@ -44,11 +44,11 @@ main {
 }
 
 /* カード各種のレイアウト */
-#player-hand, #player-hand, #element-status, #actions {
+#player-hand, #player-hand, #element-status, #actions, #play-area {
     margin : 40px 0;
 }
 
-#player-hand, #opponent-hand {
+#player-hand, #opponent-hand, #play-area {
     display: flex;
     flex-direction: column;
     align-items: center; /* 中央揃えにする */

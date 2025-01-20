@@ -4,12 +4,12 @@ https://fontawesome.com/icons/cards?s=solid
 https://icons8.com/icons/set/card-suit
 
 ～次回すること～
-・カードをHTML画面に表示させる
-・プレイヤーにカードを5枚追加する
-・（できたら敵にも追加する）
+・敵にも手札を表示させる
+・ページを開いた瞬間に「Game　Start！」と表示させた後にお互いにカーを5枚ずつ配る
+・
+
 
 ～あとやりたいこと～
-・JSでゲームを作成
 ・特別ルールの追加
 
 ～githubのターミナルで使用できるコマンド～
