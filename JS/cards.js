@@ -49,6 +49,10 @@ window.Deck = class {
     /* カードを1枚引くメソッド */
     draw() {
         return this.cards.pop(); /* pop:スタックの「後入れ先出し（LIFO: Last In, First Out）」*/
+        if (this.cards.length === 0) { /* カード54枚を使い切ったら */
+            this.initializeDeck();
+            this.shuffle();
+        }
     }
 }
 
@@ -57,6 +61,12 @@ function createCardElement(card) {
     const cardElement = document.createElement('div');
     cardElement.className = 'card';
     cardElement.textContent = card.toString();
+
+    /* ハートとダイヤを赤色にする */
+    if (card.suit === '♥' || card.suit === '♦') {
+        cardElement.classList.add('heart-diamond')
+    }
+    
     return cardElement;
 }
 

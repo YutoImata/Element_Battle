@@ -61,6 +61,7 @@ main {
 #cards { /* プレイヤーと相手のカードを表示するためのclass */
     display: flex;justify-content: center;
     gap: 10px;
+    flex-wrap: wrap; /* 折り返しを有効 */
 }
 
 .card { /* 手札そのもののclass */
@@ -72,6 +73,11 @@ main {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
     text-align: center;
     font-size: 20px;
+}
+
+/* ハートとダイヤはカードを赤くする */
+.heart-diamond {
+    color:  red;
 }
 
 #element-status {
