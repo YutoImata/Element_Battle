@@ -51,3 +51,26 @@ window.Deck = class {
         return this.cards.pop(); /* pop:スタックの「後入れ先出し（LIFO: Last In, First Out）」*/
     }
 }
+
+/* カードをHTML要素として生成する関数*/
+function createCardElement(card) {
+    const cardElement = document.createElement('div');
+    cardElement.className = 'card';
+    cardElement.textContent = card.toString();
+    return cardElement;
+}
+
+/* プレイヤーに手札を追加する関数 */
+function addCardToPlayerHand(card) {
+    const playerHand = document.querySelector('#player-hand #cards'); /* #player-hand 内の #cardsを取得する */
+    const cardElement = createCardElement(card);
+    playerHand.appendChild(cardElement);
+}
+
+/* 相手のに手札を追加する関数 */
+function addCardToOpponentHand(card) {
+    const opponentHand = document.querySelector('#opponent-hand #cards');
+    const cardElement = createCardElement(card);
+    opponentHand.appendChild(cardElement);
+}
+
