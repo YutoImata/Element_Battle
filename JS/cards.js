@@ -48,10 +48,11 @@ window.Deck = class {
 
     /* カードを1枚引くメソッド */
     draw() {
-        return this.cards.pop(); /* pop:スタックの「後入れ先出し（LIFO: Last In, First Out）」*/
         if (this.cards.length === 0) { /* カード54枚を使い切ったら */
             this.initializeDeck();
             this.shuffle();
+
+            return this.cards.pop(); /* pop:スタックの「後入れ先出し（LIFO: Last In, First Out）」*/
         }
     }
 }
@@ -83,4 +84,15 @@ function addCardToOpponentHand(card) {
     const cardElement = createCardElement(card);
     opponentHand.appendChild(cardElement);
 }
+// /* デバック用に敵の手札が見えるようにする */
+// document.getElementById('debug-toggle').addEventListener('click', () => {
+//     document.body.classList.toggle('debug');
+// })
 
+/* 各プレイヤーにカードを５枚ずつ最初に配る */
+function dealInitialCards () {
+    for (let i = 0; i < 5; i++) {
+        addCardToPlayerHand(deck.draw());
+        addCardToOpponentHand(deck.draw());
+    }
+}

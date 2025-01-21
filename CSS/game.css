@@ -58,6 +58,18 @@ main {
     text-align: center; /* テキストを中央揃えにする */
 }
 
+/* 敵のカードのレイアウト */
+#opponent-hand #cards .card {
+    visibility: hidden; /*見えないようにする */
+}
+
+/* デバック用に見えるように */
+.debug #opponent-hand #cards .card {
+    visibility: visible; /* 表示する */
+}
+
+
+
 #cards { /* プレイヤーと相手のカードを表示するためのclass */
     display: flex;justify-content: center;
     gap: 10px;
