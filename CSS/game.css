@@ -36,6 +36,51 @@ main {
     max-width: 800px;
 }
 
+/* スタートボタンのレイアウト */
+#start-game {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.transparent-background #element-status,
+.transparent-background #opponent-hand,
+.transparent-background #play-area,
+.transparent-background #player-hand,
+.transparent-background #actions {
+    opacity: 0.15;
+    pointer-events: none;
+}
+
+#start-button {
+    background: linear-gradient(90deg, red, yellow, green, blue, red);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 24px;
+    transition: background-color 0.3s;
+    background-size: 400%; /* グラデーションの繰り返しを設定 */
+    animation: gradientAnimation 5s infinite; /* アニメーションの追加 */
+}
+
+#start-button:hover {
+    background: linear-gradient(90deg, red, yellow, green, blue, red);
+    background-size: 400%;
+    animation: gradientAnimation 5s infinite;
+    transform: scale(1.1); /* 手前側に浮き出ているようなアニメーション */
+}
+
+/* グラデーションのアニメーション */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* ゲーム画面のレイアウト */
 #game-board {
     display: flex;
@@ -59,13 +104,14 @@ main {
 }
 
 /* 敵のカードのレイアウト */
-#opponent-hand #cards .card {
-    visibility: hidden; /*見えないようにする */
-}
-
-/* デバック用に見えるように */
 .debug #opponent-hand #cards .card {
     visibility: visible; /* 表示する */
+}
+/*敵の手札は見えてないけないため、青色で塗りつぶす（コメントアウトしたら相手の手札も見れるようになる） */
+#opponent-hand #cards .card {
+    background-color: blue;
+    color: blue;
+    border: 1px solid blue;
 }
 
 

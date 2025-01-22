@@ -51,9 +51,8 @@ window.Deck = class {
         if (this.cards.length === 0) { /* カード54枚を使い切ったら */
             this.initializeDeck();
             this.shuffle();
-
-            return this.cards.pop(); /* pop:スタックの「後入れ先出し（LIFO: Last In, First Out）」*/
         }
+        return this.cards.pop(); /* pop:スタックの「後入れ先出し（LIFO: Last In, First Out）」*/
     }
 }
 
@@ -71,9 +70,12 @@ function createCardElement(card) {
     return cardElement;
 }
 
+
+
 /* プレイヤーに手札を追加する関数 */
 function addCardToPlayerHand(card) {
     const playerHand = document.querySelector('#player-hand #cards'); /* #player-hand 内の #cardsを取得する */
+    console.log('Player hand:', card.toString()); /* デバック */
     const cardElement = createCardElement(card);
     playerHand.appendChild(cardElement);
 }
@@ -81,6 +83,7 @@ function addCardToPlayerHand(card) {
 /* 相手のに手札を追加する関数 */
 function addCardToOpponentHand(card) {
     const opponentHand = document.querySelector('#opponent-hand #cards');
+    console.log('Opponent hand:', card.toString()); /* デバック */
     const cardElement = createCardElement(card);
     opponentHand.appendChild(cardElement);
 }

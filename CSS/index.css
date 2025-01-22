@@ -80,12 +80,12 @@ h1 {
 }
 
 /* start buttonのレイアウト */
-#start-game {
+#gama-page {
     text-align: center;
     margin-top: 20px;
 }
 
-#start-button {
+#gama-page-button {
     background: linear-gradient(90deg, red, yellow, green, blue, red );
     color: white;
     border: none;
@@ -98,7 +98,7 @@ h1 {
     animation: gradientAnimation 5s infinite; /* アニメーションの追加 */
 }
 
-#start-button:hover {
+#gama-page-button:hover {
     background: linear-gradient(90deg, red, yellow, green, blue, red );
     background-size: 400%;
     animation: gradientAnimation 5s infinite;
