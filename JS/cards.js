@@ -53,6 +53,7 @@ window.Deck = class {
             const j = Math.floor(Math.random() * (i + 1));
             [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
         }
+        logDeck(this.cards); // debug.jsの関数を呼び出す
     }
 
     /* カードを1枚引くメソッド */
