@@ -43,8 +43,6 @@ window.Deck = class {
         /* Jokerを追加 */
         this.cards.push(new Card('Joker', ''));
         this.cards.push(new Card('Joker', ''));
-
-                // console.log(this.cards.map(card => card.toString())); /* デッキの内容を確認 */
     }
 
     /* カードを混ぜる処理 */
@@ -92,17 +90,23 @@ function selectCardFromPlayerHand(cardElement) {
 /* プレイヤーに手札を追加する関数 */
 function addCardToPlayerHand(card) {
     const playerHand = document.querySelector('#player-hand #cards'); /* #player-hand 内の #cardsを取得する */
-    // console.log('Player hand:', card.toString()); /* デバック */
     const cardElement = createCardElement(card);
     cardElement.addEventListener('click', () => selectCardFromPlayerHand(cardElement));
     playerHand.appendChild(cardElement);
+
+    logPlayerCards(playerHand.children); /* デバック */
 }
 
 /* 相手のに手札を追加する関数 */
 function addCardToOpponentHand(card) {
-    const opponentHand = document.querySelector('#opponent-hand #cards');    const cardElement = createCardElement(card);
+    const opponentHand = document.querySelector('#opponent-hand #cards');
+    const cardElement = createCardElement(card);
     opponentHand.appendChild(cardElement);
+
+    logOpponentCards(opponentHand.children); /* デバック */
 }
+
+
 
 /* 各プレイヤーにカードを５枚ずつ最初に配る */
 function dealInitialCards () {
