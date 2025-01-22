@@ -127,20 +127,22 @@ function playCard() {
     const playArea = document.querySelector('#play-area #played-cards');
     
     /* カードをプレイエリアに移動させる */
+    const initialRect = selectedCard.getBoundingClientRect();
+    const playAreaRect = playArea.getBoundingClientRect();
     selectedCard.style.position = 'absolute';
-    selectedCard.style.top = `${playArea.offsetTop + offset}px`;
-    selectedCard.style.left = `${playArea.offsetLeft + offset - 30}px`;
+    selectedCard.style.top = `${initialRect.top}px`;
+    selectedCard.style.left = `${initialRect.left}px`;
     selectedCard.style.zIndex = zIndexCounter++; /* カードの重ね順を設定 */
 
 
     /* 少し経ったらプレイエリアにカードを移動させる */
+
     setTimeout(() => {
-        playArea.appendChild(selectedCard);
-        selectedCard.classList.remove('selected-card');
-        selectedCard.style.zIndex = '';
+        selectedCard.style.top = `${playAreaRect.top + offset}px`;
+        selectedCard.style.left = `${playAreaRect.left + offset - 30}px`;
+        selectedCard.style.transition = 'top 0.5s ease-in-out, left 0.5s ease-in-out';
         selectedCard.style.pointerEvents = 'none'; /* カードの操作を無効にする */
-    }, 500); /* アニメーションの時間と同じに設定する */
-    
+    }, 0);
 }
 
 /* カードを出すボタンのイベントリスナーを追加する */
