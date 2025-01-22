@@ -90,9 +90,7 @@ function addCardToPlayerHand(card) {
 
 /* 相手のに手札を追加する関数 */
 function addCardToOpponentHand(card) {
-    const opponentHand = document.querySelector('#opponent-hand #cards');
-    // console.log('Opponent hand:', card.toString()); /* デバック */
-    const cardElement = createCardElement(card);
+    const opponentHand = document.querySelector('#opponent-hand #cards');    const cardElement = createCardElement(card);
     opponentHand.appendChild(cardElement);
 }
 
@@ -105,6 +103,10 @@ function dealInitialCards () {
 }
 
 /* プレイエリアにカードを出せるようにする関数 */
+let zIndexCounter = 1;
+let offset = 0; // カードの位置をずらすためのオフセット
+
+
 function playCard() {
     const selectedCard = document.querySelector('.selected-card');
     if (!selectedCard) {
@@ -116,17 +118,19 @@ function playCard() {
     
     /* カードをプレイエリアに移動させる */
     selectedCard.style.position = 'absolute';
-    selectedCard.style.top = `${playArea.offsetTop}px`
-    selectedCard.style.left = `${playArea.offsetLeft}px`
+    selectedCard.style.top = `${playArea.offsetTop + offset}px`;
+    selectedCard.style.left = `${playArea.offsetLeft + offset - 30}px`;
+    selectedCard.style.zIndex = zIndexCounter++; /* カードの重ね順を設定 */
+
 
     /* 少し経ったらプレイエリアにカードを移動させる */
     setTimeout(() => {
         playArea.appendChild(selectedCard);
         selectedCard.classList.remove('selected-card');
-        selectedCard.style.position = '';
-        selectedCard.style.top = '';
-        selectedCard.style.left = '';
+        selectedCard.style.zIndex = '';
+        selectedCard.style.pointerEvents = 'none'; /* カードの操作を無効にする */
     }, 500); /* アニメーションの時間と同じに設定する */
+    
 }
 
 /* カードを出すボタンのイベントリスナーを追加する */
