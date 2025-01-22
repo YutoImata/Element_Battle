@@ -16,31 +16,47 @@ git pull origin ブランチ名
 
 
 ～コミット名に関して～
-以下のようなものが主に使用される
+feat: 新しい機能を追加した場合
+新しい機能の追加やモジュールの実装を行ったときに使用します。
+例: feat: add user authentication system
+例: feat: implement multiplayer mode
 
-feat
-新しい機能を追加した場合に使用します。
+fix: バグ修正に使用
+既存のバグや不具合を修正した場合に使用します。
+例: fix: resolve issue with card shuffle
+例: fix: correct button alignment on mobile
 
-fix
-バグ修正に使用します。
+docs: ドキュメント関連の変更
+READMEやコメントなど、ドキュメントに関する変更を行ったときに使用します。
+例: docs: update README with setup instructions
+例: docs: add code comments to explain card logic
 
-docs
-ドキュメント関連の変更に使用します（例: README、コメントなど）。
+style: コードのフォーマットやスタイルの変更
+機能に影響しないコードのスタイルやフォーマット（インデント、スペース、改行など）を変更したときに使用します。
+例: style: apply consistent indentation in all files
+例: style: update CSS class names to follow BEM convention
 
-style
-コードのフォーマットやスタイルの変更（機能に影響しないもの）に使用します。
+refactor: リファクタリング（機能変更なし）
+機能を変更せずにコードの可読性や効率を改善したときに使用します。
+例: refactor: simplify game loop logic
+例: refactor: consolidate duplicate functions into a single utility
 
-refactor
-機能の変更を伴わないリファクタリングに使用します（コードの改善など）。
+test: テストコードの追加や変更
+テストコードの追加や修正を行ったときに使用します。
+例: test: add unit tests for player actions
+例: test: update test cases for card validation
 
-test
-テストコードやテスト関連の変更に使用します。
+chore: プロジェクトに直接影響しない変更
+ビルドツールの設定変更や依存関係の更新など、プロジェクト全体に影響を与えるが、機能やバグ修正に関わらない変更を行ったときに使用します。
+例: chore: update dependencies
+例: chore: clean up unused files
 
-chore
-プロジェクトや他の開発者に直接影響しない軽微な変更とみなされる時に使用する
+perf: パフォーマンス改善
+コードのパフォーマンス改善を行った場合に使用します（速度向上やメモリ削減など）。
+例: perf: optimize card shuffle algorithm
+例: perf: reduce image loading time by lazy loading
 
-perf
-パフォーマンス改善に使用します
-
-revert
-以前のコミットを取り消す場合に使用します。
+revert: 以前のコミットを取り消す
+以前のコミットを取り消す場合に使用します（間違った変更を元に戻す）。
+例: revert: undo changes to game logic
+例: revert: remove experimental feature
