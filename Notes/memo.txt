@@ -28,24 +28,6 @@ https://icons8.com/icons/set/card-suit
 ・敵の強さを設定できるようにする
 
 
-～githubのターミナルで使用できるコマンド～
-stage:
-git add .
-※これはすべてのファイルをステージする際に使用する（すべてではない場合はファイルを指定する必要がある）
-
-commit:
-git commit -m "ここにメッセージを書く"
-
-push:
-git push origin ブランチ名
-ブランチの確認方法:
-git branch
-
-pull(同期):
-git pull origin ブランチ名
-
-
-
 ～以前に困ったこと～
 ・cards.jsで作成したメソッドを、main.jsで読み込めるようにすること
 →グローバス変数を利用したことで解決した
