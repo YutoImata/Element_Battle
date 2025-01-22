@@ -1,4 +1,10 @@
-// グローバル変数からクラスを使用
+/*
+ *
+ * main.js
+ * 
+ */
+
+/* グローバル変数からクラスを使用 */
 const deck = new Deck();
 deck.shuffle(); /* 'draw-card'の関数内に入れたら毎度シャッフルされ同じカードが出てきてしまうためここに書く */
 
@@ -16,4 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
         const drawCard = deck.draw();
         addCardToPlayerHand(drawCard);
     });
+});
+
+/* エレメントポイントをHTML上に反映させる方法 */
+document.getElementById('play-card').addEventListener('click', () => {
+    playCard();
+    const selectedCard = document.querySelector('.selected-card');
+    if (selectedCard) {
+        const card = new Card(selectedCard.textContent[0],selectedCard.textContent.slice(1));
+        applyCardEffect(card, true);
+    }
 });

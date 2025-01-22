@@ -1,4 +1,14 @@
+/*
+ *
+ * cards.js
+ * 
+ */
+
 /* デッキの定義 */
+
+/* グローバル変数の定義 */
+window.suits = ['♥', '♦', '♣', '♠']; /* スート（マーク）の定義 */
+window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
 /*別のJSファイルで呼び出すためグローバル変数にする */
 window.Card = class {
     constructor(suit, rank) {
@@ -8,6 +18,9 @@ window.Card = class {
 
     /* カードの情報を文字列として返すメソッドを追加 */
     toString() {
+        if (this.suit === 'Joker') {
+            return 'Joker';
+        }
         return `${this.suit}${this.rank}`;
     }
 };
@@ -20,9 +33,6 @@ window.Deck = class {
 
     /* デッキを初期化するメソッドの定義 */
     initializeDeck() {
-        const suits = ['♥', '♦', '♣', '♠']; /* スート（マーク）の定義 */
-        const ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
-
         /* 52枚(13 * 4)のカード生成 */
         for (let suit of suits) {
             for (let rank of ranks) {
@@ -43,7 +53,6 @@ window.Deck = class {
             const j = Math.floor(Math.random() * (i + 1));
             [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
         }
-        console.log(this.cards.map(card => card.toString())); /* デッキの内容を確認 */
     }
 
     /* カードを1枚引くメソッド */
