@@ -53,13 +53,8 @@ main.jsに、カードを引くボタンとプレイするボタンのイベン�
 プレイヤーの手札からカードをプレイエリアに移動させる機能を追加。
 
 次回すること：
-エラーの修正
-main.js:7 Uncaught TypeError: Cannot read properties of null (reading 'addEventListener')
-    at HTMLDocument.<anonymous> (main.js:7:44)
 
-・敵にも手札を表示させる（見えないようにする、デバックで見えるようにもしておく）
-
-・お互いにカードを5枚ずつ配る
+・「カードを出す」を押したらプレイエリアにプレイヤーが選択したカードを１枚出せるようになる
 
 
 本日もよろしくお願いいたします。
