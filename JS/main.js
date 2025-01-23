@@ -32,14 +32,16 @@ function update() {
 }
     
 
-/* スタートボタンが押されたらカードをお互いに５枚ずつ配布する */
+/* ページが読み込まれたときに呼び出す関数を入れる(1度だけ呼び出せれば大丈夫なのを入れる) */
 document.addEventListener('DOMContentLoaded', () => {
-    /* カードを５枚配るのと、背景の透明化を解除する */
     document.getElementById('start-button').addEventListener('click', () => {
         document.getElementById('game-board').classList.remove('transparent-background');
         document.getElementById('start-game').style.display = 'none';
-        dealInitialCards();
-        startTurn();
-        update();
+        dealInitialCards(); /* カードを５枚配るのと、背景の透明化を解除する */
+        startTurn(); /* ターンが開始する */
     });
 });
+
+
+/* ここでUpdate関数を読み込んでおく */
+update();
