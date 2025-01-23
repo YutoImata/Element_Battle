@@ -85,4 +85,18 @@ revert: 以前のコミットを取り消す
 例: revert: undo changes to game logic
 例: revert: remove experimental feature
 
+以前起きたトラブル
+事例：configでメアドと名前を変更して戻そうそしたらゲスト？みたいになった（Commitのtest10とかたくさんあるところに書いてある）
 
+以下のように打って解決
+PS C:\Users\YutoImata\Desktop\VSC_github\Element_Battle> git config user.name "
+>> YutoImata
+>> "
+PS C:\Users\YutoImata\Desktop\VSC_github\Element_Battle> git config user.email "yuto.imata.wine@gmail.com"
+
+方法
+１・もう一度設定しなおす
+２・無理だったら再起動
+３・それでも無理だったらgithubのプロフィール情報の名前をコピペする（>>ってかいてあるけどこれがあったからできたのかな？多分関係ないと思うけど）
+４・メアドもそこで確認して正しく打ち込む
+これでできた
