@@ -8,6 +8,7 @@
 const deck = new Deck();
 deck.shuffle(); /* 'draw-card'の関数内に入れたら毎度シャッフルされ同じカードが出てきてしまうためここに書く */
 
+/* update関数は、イベントリスナーを設定するために使用される */
 
 function update() {
     /* カードを引くボタンを押したらカードを引く */
@@ -15,7 +16,6 @@ function update() {
         const drawCard = deck.draw();
         addCardToPlayerHand(drawCard);
     });
-
 
     /* エレメントポイントをHTML上に反映させる方法 */
     document.getElementById('play-card').addEventListener('click', () => {

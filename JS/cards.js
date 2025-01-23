@@ -144,7 +144,7 @@ function playCard() {
     setTimeout(() => {
         selectedCard.style.top = `${playAreaRect.top}px`;
         selectedCard.style.left = `${playAreaRect.left - 30}px`;
-        selectedCard.style.transition = 'top 2s ease-in-out, left 2s ease-in-out';
+        selectedCard.style.transition = 'top 1s ease-in-out, left 1s ease-in-out';
         selectedCard.style.pointerEvents = 'none'; /* カードの操作を無効にする */
     }, 0);
 }
