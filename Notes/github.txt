@@ -1,3 +1,5 @@
+test9
+
 ～githubのターミナルで使用できるコマンド～
 stage:
 git add .
@@ -84,4 +86,3 @@ revert: 以前のコミットを取り消す
 例: revert: remove experimental feature
 
 
-test8
