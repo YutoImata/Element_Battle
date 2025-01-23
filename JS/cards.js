@@ -153,4 +153,14 @@ function playCard() {
 }
 
 /* カードを出すボタンのイベントリスナーを追加する */
-document.getElementById('play-card').addEventListener('click', playCard);
+document.getElementById('play-card').addEventListener('click', () => {
+    const selectedCard = document.querySelector('.selected-card');
+    if (!selectedCard) {
+        alert('カードを選択してください！');
+        return;
+    }
+
+    playCard(selectedCard);
+    applyCardEffect(selectedCard, true);
+    endTurn();
+});

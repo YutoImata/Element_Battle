@@ -39,6 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('game-board').classList.remove('transparent-background');
         document.getElementById('start-game').style.display = 'none';
         dealInitialCards();
+        startTurn();
         update();
     });
 });
