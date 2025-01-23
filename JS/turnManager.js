@@ -59,7 +59,11 @@ function startTurn() {
  function playOpponentCard(cardElement) {
     const playArea = document.querySelector('#play-area #played-cards');
     playArea.appendChild(cardElement);
-    applyCardEffect(cardElement, false);
- }
+    const card = new Card(cardElement.textContent[0], cardElement.textContent.slice(1));
+    applyCardEffect(card, false);
+    updateElementPointsDisplay();  /* エレメントポイントを更新 */
+    checkForWin(); /* 勝利しているかをチェック */
+}
 
  
+
