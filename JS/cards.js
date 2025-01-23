@@ -146,6 +146,9 @@ function playCard() {
         selectedCard.style.left = `${playAreaRect.left - 30}px`;
         selectedCard.style.transition = 'top 1s ease-in-out, left 1s ease-in-out';
         selectedCard.style.pointerEvents = 'none'; /* カードの操作を無効にする */
+
+        selectedCard.classList.remove('selected-card'); /* カードの選択状態を解除する => そうすることで連続してポイントを取得できなくなる */
+
     }, 0);
 }
 
