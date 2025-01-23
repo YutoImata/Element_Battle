@@ -142,9 +142,9 @@ function playCard() {
     /* 少し経ったらプレイエリアにカードを移動させる */
 
     setTimeout(() => {
-        selectedCard.style.top = `${playAreaRect.top + offset}px`;
-        selectedCard.style.left = `${playAreaRect.left + offset - 30}px`;
-        selectedCard.style.transition = 'top 0.5s ease-in-out, left 0.5s ease-in-out';
+        selectedCard.style.top = `${playAreaRect.top}px`;
+        selectedCard.style.left = `${playAreaRect.left - 30}px`;
+        selectedCard.style.transition = 'top 2s ease-in-out, left 2s ease-in-out';
         selectedCard.style.pointerEvents = 'none'; /* カードの操作を無効にする */
     }, 0);
 }

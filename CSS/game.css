@@ -1,3 +1,9 @@
+/*
+ *
+ * game.css
+ * 
+ */
+
 /* 全体スタイル */
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -51,7 +57,7 @@ main {
 .transparent-background #play-area,
 .transparent-background #player-hand,
 .transparent-background #actions {
-    opacity: 0.15;
+    opacity: 0.15; /*背景を透明にする */
     pointer-events: none;
 }
 
