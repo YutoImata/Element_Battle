@@ -12,13 +12,13 @@ let opponentElementPoints = 0;
 function applyCardEffect(card, isPlayer) {
     if (card.suit === '♥') {
         if (isPlayer) {
-            playerElementPoints += 2;
+            playerElementPoints += 10;
         } else {
             opponentElementPoints += 2;
         }
     } else if (card.suit === '♦') {
         if (isPlayer) {
-            playerElementPoints += 1;
+            playerElementPoints += 10;
         } else {
             opponentElementPoints += 1;
         }
@@ -55,10 +55,14 @@ function updateElementPointsDisplay() {
 function checkForWin() {
     if (playerElementPoints >= 10) {
         showVictoryMessage();
-        // resetGame();
+        setTimeout(() => {
+            endGame();
+        }, 1000); /* １秒間待機 */
     } else if (opponentElementPoints >= 10) {
         showLoseMessage(); 
-        // resetGame();
+        setTimeout(() => {
+            endGame();
+        }, 1000); /* １秒間待機 */
     }
 }
 
