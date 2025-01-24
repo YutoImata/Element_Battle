@@ -118,8 +118,6 @@ function dealInitialCards () {
 
 /* プレイエリアにカードを出せるようにする関数 */
 let zIndexCounter = 1;
-let offset = 0; /* 相手のカードの位置をずらすためのオフセット */
-
 
 function playCard() {
     const selectedCard = document.querySelector('.selected-card');
@@ -143,13 +141,11 @@ function playCard() {
 
     setTimeout(() => {
         selectedCard.style.top = `${playAreaRect.top}px`;
-        selectedCard.style.left = `${playAreaRect.left - 60}px`;
+        selectedCard.style.left = `${playAreaRect.left - 70}px`;
         selectedCard.style.transition = 'top 1s ease-in-out, left 1s ease-in-out';
         selectedCard.style.pointerEvents = 'none'; /* カードの操作を無効にする */
 
         selectedCard.classList.remove('selected-card'); /* カードの選択状態を解除する => そうすることで連続してポイントを取得できなくなる */
-
-        offset =+ 30;
     }, 0);
 }
 
