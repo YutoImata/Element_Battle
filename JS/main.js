@@ -21,11 +21,11 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
 
         addCardToPlayerHand(drawCard)
             playerDrawnCard = true;
-            console.log('カードを引いたよ');
+            // console.log('カードを引いたよ');
             
             document.getElementById('draw-card').disabled = true; /* 次にカードを引けないようにする */
             document.getElementById('play-card').disabled = false; /* そしてカードを出せるようにする */
-            console.log('カードを出せるようになっているはず');
+            // console.log('カードを出せるようになっているはず');
 
     });
 
@@ -54,4 +54,6 @@ document.addEventListener('DOMContentLoaded', () => {
         startTurn(); /* ターンが開始する */
     });
 });
+
+
 
