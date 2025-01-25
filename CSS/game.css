@@ -221,11 +221,19 @@ button:hover {
     display: inline-block;
 }
 
+#end-game-buttons {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
 /* タイトルともう一度プレイするボタンのレイアウト */
 #end-game-buttons button {
     font-size: 18px;
     padding: 10px 20px;
-    margin: 5px;
+    margin: 15px;
     border: #000;
     border-radius: 5px;
     background-color: #007bff;
@@ -235,4 +243,5 @@ button:hover {
 
 #end-game-buttons button:hover {
     background-color: #0056b3;
+    transform: scale(1.1);
 }
