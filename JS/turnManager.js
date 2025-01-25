@@ -70,13 +70,12 @@ function startTurn() {
     checkForWin(); /* 勝利しているかをチェック */
 }
 
-/* どちらかがゲームに勝利した時にゲームを終了する関数 */
+/* ゲームが終了した際にする処理 */
 function endGame() {
+
     document.getElementById("game-board").classList.add("transparent-background");
     document.getElementById("start-button").style.display = "block";
 
-    /* ターンの進行を停止する */
-    currentPlayer = null;
 
 }
 

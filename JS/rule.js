@@ -54,15 +54,20 @@ function updateElementPointsDisplay() {
 /* 勝利かどうかを判定する関数 */
 function checkForWin() {
     if (playerElementPoints >= 10) {
-        showVictoryMessage();
+        /* ターンの進行を停止する */
+        currentPlayer = null;
         setTimeout(() => {
             endGame();
-        }, 1000); /* １秒間待機 */
+            showVictoryMessage();
+        }, 1500); // 1.5秒間待機
+
     } else if (opponentElementPoints >= 10) {
-        showLoseMessage(); 
+        /* ターンの進行を停止する */
+        currentPlayer = null;
         setTimeout(() => {
             endGame();
-        }, 1000); /* １秒間待機 */
+            showLoseMessage(); 
+        }, 1000); // 1秒間待機
     }
 }
 
@@ -70,9 +75,27 @@ function checkForWin() {
 function showVictoryMessage() {
     const victoryMessage = document.getElementById('victory-message');
     victoryMessage.style.display = 'block';
+    showEndGameButtons();
 }
 
 function showLoseMessage() {
     const loseMessage = document.getElementById('lose-message');
     loseMessage.style.display = 'block';
+    showEndGameButtons();
+}
+
+/* ゲーム終了時にボタンを２つ用意する */
+function showEndGameButtons() {
+    const endGameButtons = document.getElementById('end-game-buttons');
+    endGameButtons.style.display = 'block';
+
+    /* タイトルへ戻る */
+    document.getElementById('return-title').onclick = () => {
+        window.location.href = '../index.html';
+    };
+
+    /* もう一度プレイする */
+    document.getElementById('replay-game').onclick = () => {
+        window.location.reload(); /* リロードしてもう一度プレイできるようにする */
+    };
 }
