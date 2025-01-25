@@ -71,7 +71,7 @@ function endGame() {
     document.getElementById("start-button").style.display = "block";
 
     /* ターンの進行を停止する */
-    currentPlayer = nnll;
+    currentPlayer = null;
 
 }
 
