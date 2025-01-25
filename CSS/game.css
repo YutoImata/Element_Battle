@@ -201,3 +201,38 @@ button {
 button:hover {
     background-color: #45a049;
 }
+
+/* 勝利と残念のレイアウト */
+#message-container {
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    text-align: center;
+    z-index: 100;
+}
+
+#victory-message, #lose-message {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* タイトルともう一度プレイするボタンのレイアウト */
+#end-game-buttons button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 5px;
+    border: #000;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#end-game-buttons button:hover {
+    background-color: #0056b3;
+}
