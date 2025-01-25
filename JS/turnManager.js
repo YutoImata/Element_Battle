@@ -22,6 +22,11 @@ function startTurn() {
 
  /* 相手のターン */
  function opponentTurn() {
+    /* ここでプレイヤーの追跡の変数をどちらもリセットする */
+    playerDrawnCard = false;
+    playerPlayedCard = false;
+    console.log('リセットできてるよ');
+
     document.getElementById('draw-card').disabled = true;
     document.getElementById('play-card').disabled = true;
 

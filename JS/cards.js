@@ -121,10 +121,14 @@ let zIndexCounter = 1;
 
 function playCard() {
     const selectedCard = document.querySelector('.selected-card');
+    
     if (!selectedCard) {
         alert('カードを選択してください！');
         return;
     }
+
+    console.log('自分がカードを出したよ');
+
 
     const playArea = document.querySelector('#play-area #played-cards');
     
@@ -149,15 +153,3 @@ function playCard() {
     }, 0);
 }
 
-/* カードを出すボタンのイベントリスナーを追加する */
-document.getElementById('play-card').addEventListener('click', () => {
-    const selectedCard = document.querySelector('.selected-card');
-    if (!selectedCard) {
-        alert('カードを選択してください！');
-        return;
-    }
-
-    playCard(selectedCard);
-    applyCardEffect(selectedCard, true);
-    endTurn();
-});
