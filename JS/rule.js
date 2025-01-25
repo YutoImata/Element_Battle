@@ -10,6 +10,11 @@ let opponentElementPoints = 0;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
+    // applySpecialCardRules(); これ解除するとエラー出る
+    if (specialCard) {
+        return; // 何もしない
+    }
+
     if (card.suit === '♥') {
         if (isPlayer) {
             playerElementPoints += 10;
