@@ -16,8 +16,8 @@ function startTurn() {
 
  /* プレイヤーのターン */
  function playerTurn() {
-    document.getElementById('draw-card').disabled = false;
-    document.getElementById('play-card').disabled = false;
+    document.getElementById('draw-card').disabled = false; 
+    document.getElementById('play-card').disabled = true; /* まずはカードを引くことしかできないようにする */
  }
 
  /* 相手のターン */

@@ -17,9 +17,16 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
     /* カードを引くボタンを押したらカードを引く */
     document.getElementById('draw-card').addEventListener('click', () => {
         const drawCard = deck.draw();
-        addCardToPlayerHand(drawCard);
-        playerDrawnCard = true;
-        console.log('カードを引いたよ');
+        playerTurn();
+
+        addCardToPlayerHand(drawCard)
+            playerDrawnCard = true;
+            console.log('カードを引いたよ');
+            
+            document.getElementById('draw-card').disabled = true; /* 次にカードを引けないようにする */
+            document.getElementById('play-card').disabled = false; /* そしてカードを出せるようにする */
+            console.log('カードを出せるようになっているはず');
+
     });
 
     /* カードを出すボタンを押したとき */
