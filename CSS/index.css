@@ -55,7 +55,7 @@ h1 {
 }
 
 #game-rules ul li {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     font-size: 16px;
     color: #333;
     list-style-type: none;
@@ -85,6 +85,15 @@ h1 {
 .suits-img {
     width: 50px;
     height: auto;
+}
+
+/* エレメントポイントの「強化」と、「減少」の色 */
+#increase {
+    color: red;
+}
+
+#decrease {
+    color: blue;
 }
 
 /* start buttonのレイアウト */
