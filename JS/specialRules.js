@@ -5,7 +5,7 @@
  */
 
 /* 特殊カードがあったかどうか */
-specialCard = false;
+let specialCard = false;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applySpecialCardRules(card, isPlayer) {
