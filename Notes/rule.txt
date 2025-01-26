@@ -30,7 +30,7 @@
 
 
 次回すること：
-if ( carc.suit === 'Joker') {
+if ( card.suit === 'Joker') {
     /* ここに処理を書く */
     console.log('Jokerが出されました！');
 }
