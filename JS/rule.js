@@ -43,8 +43,10 @@ function applyCardEffect(card, isPlayer) {
     } else if (card.suit === 'Joker') {
         if (isPlayer) {
             playerElementPoints += 3;
+            console.log('Jokerが出されました！');
         } else {
             opponentElementPoints += 3;
+            console.log('Jokerが出されました！');
         }
     }
     // console.log('自分：', playerElementPoints);
