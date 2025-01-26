@@ -24,7 +24,7 @@ function applyCardEffect(card, isPlayer) {
         }
     } else if (card.suit === '♦') {
         if (isPlayer) {
-            playerElementPoints += 10;
+            playerElementPoints += 1;
         } else {
             opponentElementPoints += 1;
         }
@@ -47,8 +47,8 @@ function applyCardEffect(card, isPlayer) {
             opponentElementPoints += 3;
         }
     }
-    console.log('自分：', playerElementPoints);
-    console.log('敵：', opponentElementPoints);
+    // console.log('自分：', playerElementPoints);
+    // console.log('敵：', opponentElementPoints);
 }
 
 /* エレメントポイントを表示する関数 */
