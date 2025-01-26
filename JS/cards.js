@@ -8,7 +8,10 @@
 
 /* グローバル変数の定義 */
 window.suits = ['♥', '♦', '♣', '♠']; /* スート（マーク）の定義 */
-window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
+// window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
+
+window.ranks = ['A']; /* 数字の定義 */
+
 /*別のJSファイルで呼び出すためグローバル変数にする */
 window.Card = class {
     constructor(suit, rank) {
@@ -20,6 +23,7 @@ window.Card = class {
     toString() {
         if (this.suit === 'Joker') {
             return 'Joker';
+
         }
         return `${this.suit}${this.rank}`;
     }
@@ -127,7 +131,7 @@ function playCard() {
         return;
     }
 
-    console.log('自分がカードを出したよ');
+    // console.log('自分がカードを出したよ');
 
 
     const playArea = document.querySelector('#play-area #played-cards');
