@@ -10,7 +10,7 @@ let opponentElementPoints = 0;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
-    console.log('現在のカード:', card);
+    // console.log('現在のカード:', card);
 
     applySpecialCardRules(card, isPlayer);
 
