@@ -44,9 +44,9 @@ function applyCardEffect(card, isPlayer) {
         }
     } else if (card.suit === 'J' && card.rank === 'oker') { /* console.logで確認したらこのように区別されていた */
         if (isPlayer) {
-            playerElementPoints += 3;
+            playerElementPoints += 5;
         } else {
-            opponentElementPoints += 3;
+            opponentElementPoints += 5;
         }
     }
     console.log('自分：', playerElementPoints);
