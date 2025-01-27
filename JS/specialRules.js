@@ -28,8 +28,10 @@ function applySpecialCardRules(card, isPlayer) {
     } else if ((card.suit === '♠' && card.rank === 'K') || ( card.suit === '♣' && card.rank === 'K')) {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 3);
+            console.log('特殊カードでマイナスされている');
         }else {
             playerElementPoints = Math.max(0, playerElementPoints - 3);
+            console.log('特殊カードでマイナスされている');
         }
         specialCard = true;
 
@@ -40,8 +42,11 @@ function applySpecialCardRules(card, isPlayer) {
             opponentElementPoints += 3;
         }
         specialCard = true;
-        
     }
+
+    console.log('自分：', playerElementPoints);
+    console.log('敵：', opponentElementPoints);
+
 }
 
 /* コピー用 */

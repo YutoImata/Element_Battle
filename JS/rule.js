@@ -10,7 +10,7 @@ let opponentElementPoints = 0;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
-    // console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
+    console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
 
     applySpecialCardRules(card, isPlayer);
 
@@ -33,16 +33,18 @@ function applyCardEffect(card, isPlayer) {
     } else if (card.suit === '♣') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 1);
-            console.log('マイナスされてる？');
+            console.log('スペードでマイナスされてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 1);
-            console.log('マイナスされてる？');
+            console.log('スペードでマイナスされてる');
         }
     } else if (card.suit === '♠') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 2);
+            console.log('クローバーでマイナスされてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 2);
+            console.log('クローバーでマイナスされてる');
         }
     } else if (card.suit === 'J' && card.rank === 'oker') { /* console.logで確認したらこのように区別されていた */
         if (isPlayer) {

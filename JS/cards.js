@@ -55,7 +55,7 @@ window.Deck = class {
             const j = Math.floor(Math.random() * (i + 1));
             [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
         }
-        logDeck(this.cards); // debug.jsの関数を呼び出す
+        // logDeck(this.cards); // debug.jsの関数を呼び出す
     }
 
     /* カードを1枚引くメソッド */
@@ -105,7 +105,7 @@ function addCardToPlayerHand(card) {
     cardElement.addEventListener('click', () => selectCardFromPlayerHand(cardElement));
     playerHand.appendChild(cardElement);
 
-    logPlayerCards(playerHand.children); /* デバック */
+    // logPlayerCards(playerHand.children); /* デバック */
 }
 
 /* 相手のに手札を追加する関数 */
@@ -114,7 +114,7 @@ function addCardToOpponentHand(card) {
     const cardElement = createCardElement(card);
     opponentHand.appendChild(cardElement);
 
-    logOpponentCards(opponentHand.children); /* デバック */
+    // logOpponentCards(opponentHand.children); /* デバック */
 }
 
 
