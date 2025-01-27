@@ -33,8 +33,10 @@ function applyCardEffect(card, isPlayer) {
     } else if (card.suit === '♣') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 1);
+            console.log('マイナスされてる？');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 1);
+            console.log('マイナスされてる？');
         }
     } else if (card.suit === '♠') {
         if (isPlayer) {

@@ -24,6 +24,7 @@ function applySpecialCardRules(card, isPlayer) {
             opponentElementPoints *= 2;
         }
         specialCard = true; /* フラグをtrueにする */
+
     } else if ((card.suit === '♠' && card.rank === 'K') || ( card.suit === '♣' && card.rank === 'K')) {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 3);
@@ -31,6 +32,7 @@ function applySpecialCardRules(card, isPlayer) {
             playerElementPoints = Math.max(0, playerElementPoints - 3);
         }
         specialCard = true;
+
     } else if ((card.suit === '♥' && card.rank === 'K') || ( card.suit === '♦' && card.rank === 'K')) {
         if (isPlayer) {
             playerElementPoints += 3;
@@ -38,6 +40,7 @@ function applySpecialCardRules(card, isPlayer) {
             opponentElementPoints += 3;
         }
         specialCard = true;
+        
     }
 }
 
