@@ -10,7 +10,7 @@
 window.suits = ['♥', '♦', '♣', '♠']; /* スート（マーク）の定義 */
 // window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
 
-window.ranks = ['A']; /* 数字の定義 */
+window.ranks = ['A', '7', 'K']; /* 数字の定義 */
 
 /*別のJSファイルで呼び出すためグローバル変数にする */
 window.Card = class {
@@ -55,7 +55,7 @@ window.Deck = class {
             const j = Math.floor(Math.random() * (i + 1));
             [this.cards[i], this.cards[j]] = [this.cards[j], this.cards[i]];
         }
-        // logDeck(this.cards); // debug.jsの関数を呼び出す
+        logDeck(this.cards); // debug.jsの関数を呼び出す
     }
 
     /* カードを1枚引くメソッド */
@@ -75,12 +75,11 @@ function createCardElement(card) {
     cardElement.textContent = card.toString();
 
     /* ハートとダイヤを赤色にする */
-    if (card.suit === '♥' || card.suit === '♦') {
-        cardElement.classList.add('heart-diamond')
-    } else if (card.suit === '♠' && card.rank === 'A') {
+    if ((card.suit === '♠' && card.rank === 'A') || (card.suit === '♥' && card.rank === '7' ) || (card.rank === 'K')) {
         cardElement.classList.add('spade-A');
+    } else if (card.suit === '♥' || card.suit === '♦') {
+        cardElement.classList.add('heart-diamond')
     }
-    
     return cardElement;
 }
 
@@ -100,7 +99,7 @@ function addCardToPlayerHand(card) {
     cardElement.addEventListener('click', () => selectCardFromPlayerHand(cardElement));
     playerHand.appendChild(cardElement);
 
-    // logPlayerCards(playerHand.children); /* デバック */
+    logPlayerCards(playerHand.children); /* デバック */
 }
 
 /* 相手のに手札を追加する関数 */
