@@ -8,6 +8,9 @@
 let playerElementPoints = 0;
 let opponentElementPoints = 0;
 
+/* Jokerが今選択されているかどうか */
+let isSelectingJoker = true;
+
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
     console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
@@ -33,29 +36,72 @@ function applyCardEffect(card, isPlayer) {
     } else if (card.suit === '♣') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 1);
-            console.log('スペードでマイナスされてる');
+            console.log('クローバーでマイナスされてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 1);
-            console.log('スペードでマイナスされてる');
+            console.log('クローバーでマイナスされてる');
         }
     } else if (card.suit === '♠') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 2);
-            console.log('クローバーでマイナスされてる');
+            console.log('スペードでマイナスされてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 2);
-            console.log('クローバーでマイナスされてる');
+            console.log('スペードでマイナスされてる');
         }
     } else if (card.suit === 'J' && card.rank === 'oker') { /* console.logで確認したらこのように区別されていた */
         if (isPlayer) {
-            playerElementPoints += 5;
+            isSelectingJoker = true;
+        showJokerOptions(isPlayer);
         } else {
-            opponentElementPoints += 5;
+            if (playerElementPoints >= 10) {
+                playerElementPoints -= 5; /* これは絶対に負の数に行かないからこれでいい */
+            } else {
+                opponentElementPoints += 5;
+            }
         }
     }
     console.log('自分：', playerElementPoints);
     console.log('敵：', opponentElementPoints);
 }
+
+/* Jokerを出した際に選択肢を画面上に出す */
+function showJokerOptions(isPlayer) {
+    const jokerMessage = document.getElementById('joker-message');
+    const jokerSelectButtons = document.getElementById('joker-select-buttons');
+    jokerMessage.style.display = 'block';
+    jokerSelectButtons.style.display = 'block';
+
+    document.getElementById('increase-points').onclick = () => {
+        if (isPlayer) {
+            playerElementPoints += 5;
+        }
+        hideJokerOptions();
+        updateElementPointsDisplay(); /* エレメントポイントを更新 */
+        checkForWin(); /* 勝利しているかをチェック */
+    };
+
+    document.getElementById('decrease-points').onclick = () => {
+        if (isPlayer) {
+            opponentElementPoints = Math.max(0, opponentElementPoints - 5);
+        }
+        hideJokerOptions();
+        updateElementPointsDisplay(); /* エレメントポイントを更新 */
+        checkForWin(); /* 勝利しているかをチェック */
+    };
+}
+
+/* 選択肢を非表示にする関数 */
+function hideJokerOptions() {
+    const jokerMessage = document.getElementById('joker-message');
+    const jokerSelectButtons = document.getElementById('joker-select-buttons');
+    jokerMessage.style.display = 'none';
+    jokerSelectButtons.style.display = 'none';
+
+    isSelectingJoker = false; /* ここでJokerのフラグを解除する */
+    opponentTurn(); /* 敵のターンを開始する */
+}
+
 
 /* エレメントポイントを表示する関数 */
 function updateElementPointsDisplay() {

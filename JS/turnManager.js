@@ -33,6 +33,7 @@ function startTurn() {
     document.getElementById('play-card').disabled = true;
 
     setTimeout(() => {
+        if (!isSelectingJoker) {
         addCardToOpponentHand(deck.draw());
         /* 相手がカードを出す */
         setTimeout(() => {
@@ -40,6 +41,7 @@ function startTurn() {
             playOpponentCard(card);
             endTurn();
         }, 1000);
+    }
     }, 1000);
  }
 
@@ -74,11 +76,8 @@ function startTurn() {
 
 /* ゲームが終了した際にする処理 */
 function endGame() {
-
     document.getElementById("game-board").classList.add("transparent-background");
     document.getElementById("start-button").style.display = "block";
-
-
 }
 
  

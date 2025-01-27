@@ -230,6 +230,24 @@ main {
     transition: transform 0.2s, border 0.2s, box-shadow 0.2s;
 }
 
+/* Jokerを出した際のボタン */
+#joker-select-buttons button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 15px;
+    border: #000;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+#joker-select-buttons button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+
 /* ボタンのレイアウト */
 button {
     background-color: #4CAF50;
@@ -254,7 +272,7 @@ button:hover {
     z-index: 100;
 }
 
-#victory-message, #lose-message {
+#victory-message, #lose-message, #joker-message{
     font-size: 24px;
     font-weight: bold;
     color: white;
@@ -264,7 +282,7 @@ button:hover {
     display: inline-block;
 }
 
-#end-game-buttons {
+#end-game-buttons, #joker-select-buttons {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -288,3 +306,4 @@ button:hover {
     background-color: #0056b3;
     transform: scale(1.1);
 }
+
