@@ -10,7 +10,7 @@ let opponentElementPoints = 0;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
-    // console.log('現在のカード:', card);
+    // console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
 
     applySpecialCardRules(card, isPlayer);
 
@@ -20,7 +20,7 @@ function applyCardEffect(card, isPlayer) {
     
     else if (card.suit === '♥') {
         if (isPlayer) {
-            playerElementPoints += 10;
+            playerElementPoints += 2;
         } else {
             opponentElementPoints += 2;
         }
@@ -42,15 +42,15 @@ function applyCardEffect(card, isPlayer) {
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 2);
         }
-    } else if (card.suit === 'J' && card.rank === 'oker') {
+    } else if (card.suit === 'J' && card.rank === 'oker') { /* console.logで確認したらこのように区別されていた */
         if (isPlayer) {
             playerElementPoints += 3;
         } else {
             opponentElementPoints += 3;
         }
     }
-    // console.log('自分：', playerElementPoints);
-    // console.log('敵：', opponentElementPoints);
+    console.log('自分：', playerElementPoints);
+    console.log('敵：', opponentElementPoints);
 }
 
 /* エレメントポイントを表示する関数 */
@@ -61,7 +61,7 @@ function updateElementPointsDisplay() {
 
 /* 勝利かどうかを判定する関数 */
 function checkForWin() {
-    if (playerElementPoints >= 10) {
+    if (playerElementPoints >= 20) {
         /* ターンの進行を停止する */
         currentPlayer = null;
         setTimeout(() => {
@@ -69,7 +69,7 @@ function checkForWin() {
             showVictoryMessage();
         }, 1500); // 1.5秒間待機
 
-    } else if (opponentElementPoints >= 10) {
+    } else if (opponentElementPoints >= 20) {
         /* ターンの進行を停止する */
         currentPlayer = null;
         setTimeout(() => {
