@@ -10,6 +10,8 @@ let opponentElementPoints = 0;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
+    console.log('現在のカード:', card);
+
     applySpecialCardRules(card, isPlayer);
 
     if (specialCard) {
@@ -40,13 +42,11 @@ function applyCardEffect(card, isPlayer) {
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 2);
         }
-    } else if (card.suit === 'Joker') {
+    } else if (card.suit === 'J' && card.rank === 'oker') {
         if (isPlayer) {
             playerElementPoints += 3;
-            console.log('Jokerが出されました！');
         } else {
             opponentElementPoints += 3;
-            console.log('Jokerが出されました！');
         }
     }
     // console.log('自分：', playerElementPoints);
