@@ -69,8 +69,13 @@ function applyCardEffect(card, isPlayer) {
 function showJokerOptions(isPlayer) {
     const jokerMessage = document.getElementById('joker-message');
     const jokerSelectButtons = document.getElementById('joker-select-buttons');
+    /* 背景を薄くする */
+    const body = document.querySelector('body'); /* bodyタグを取得 */
+    body.classList.add('transparent-background');
+
     jokerMessage.style.display = 'block';
     jokerSelectButtons.style.display = 'block';
+    
 
     document.getElementById('increase-points').onclick = () => {
         if (isPlayer) {
@@ -97,6 +102,10 @@ function hideJokerOptions() {
     const jokerSelectButtons = document.getElementById('joker-select-buttons');
     jokerMessage.style.display = 'none';
     jokerSelectButtons.style.display = 'none';
+
+    /* 背景を元に戻す */
+    const body = document.querySelector('body'); /* bodyタグを取得 */
+    body.classList.remove('transparent-background');
 
     isSelectingJoker = false; /* ここでJokerのフラグを解除する */
     opponentTurn(); /* 敵のターンを開始する */
