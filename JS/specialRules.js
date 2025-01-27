@@ -26,9 +26,9 @@ function applySpecialCardRules(card, isPlayer) {
         specialCard = true; /* フラグをtrueにする */
     } else if ((card.suit === '♠' && card.rank === 'K') || ( card.suit === '♣' && card.rank === 'K')) {
         if (isPlayer) {
-            opponentElementPoints -= 3;
+            opponentElementPoints = Math.max(0, opponentElementPoints - 3);
         }else {
-            playerElementPoints -= 3;
+            playerElementPoints = Math.max(0, playerElementPoints - 3);
         }
         specialCard = true;
     } else if ((card.suit === '♥' && card.rank === 'K') || ( card.suit === '♦' && card.rank === 'K')) {
