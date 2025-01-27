@@ -18,6 +18,7 @@ function startTurn() {
  function playerTurn() {
     document.getElementById('draw-card').disabled = false; 
     document.getElementById('play-card').disabled = true; /* まずはカードを引くことしかできないようにする */
+    specialCard = false; /* 特殊カードのフラグをリセット */
  }
 
  /* 相手のターン */
@@ -25,6 +26,7 @@ function startTurn() {
     /* ここでプレイヤーの追跡の変数をどちらもリセットする */
     playerDrawnCard = false;
     playerPlayedCard = false;
+    specialCard = false; /* 特殊カードのフラグをリセット */
     // console.log('リセットできてるよ');
 
     document.getElementById('draw-card').disabled = true;

@@ -40,7 +40,6 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
             applyCardEffect(card, true);
             updateElementPointsDisplay(); /* エレメントポイントを更新 */
             checkForWin(); /* 勝利しているかをチェック */
-            specialCard = false; /* 特殊カードのフラグをリセット */
             endTurn();
         }
     });
