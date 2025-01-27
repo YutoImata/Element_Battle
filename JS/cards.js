@@ -75,9 +75,15 @@ function createCardElement(card) {
     cardElement.textContent = card.toString();
 
     /* ハートとダイヤを赤色にする */
-    if ((card.suit === '♠' && card.rank === 'A') || (card.suit === '♥' && card.rank === '7' ) || (card.rank === 'K')) {
+    if ((card.suit === '♠' && card.rank === 'A')) {
         cardElement.classList.add('spade-A');
-    } else if (card.suit === '♥' || card.suit === '♦') {
+    } else if (card.suit === '♥' && card.rank === '7' ) {
+        cardElement.classList.add('hart-7');
+    } else if ((card.suit === '♥' && card.rank === 'K') || ( card.suit === '♦' && card.rank === 'K')) {
+        cardElement.classList.add('heart-diamond-K');
+    } else if ((card.suit === '♣' && card.rank === 'K') || ( card.suit === '♠' && card.rank === 'K')) {
+        cardElement.classList.add('spade-club-K');
+    }else if (card.suit === '♥' || card.suit === '♦') {
         cardElement.classList.add('heart-diamond')
     }
     return cardElement;
@@ -108,7 +114,7 @@ function addCardToOpponentHand(card) {
     const cardElement = createCardElement(card);
     opponentHand.appendChild(cardElement);
 
-    // logOpponentCards(opponentHand.children); /* デバック */
+    logOpponentCards(opponentHand.children); /* デバック */
 }
 
 

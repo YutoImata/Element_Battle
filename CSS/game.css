@@ -181,7 +181,11 @@ main {
 }
 
 .spade-A {
-    color: #45a049;
+    color:  black;
+    background: linear-gradient(90deg, white, black); /* 白と黒のグラデーション */
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); /* 文字の光沢感 */
 }
 
 .hart-7 {
@@ -191,10 +195,25 @@ main {
     animation: gradientAnimation 5s ease infinite;
 }
 
+.spade-club-K {
+    color: #FFD700; /* 金色 */
+    background-color: rgba(0, 0, 0, 0.8); /* 黒色を少し透明に */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 光沢感のある影 */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 1), 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.3); /* 発光効果 */
+}
+
+.heart-diamond-K {
+    color: #FFD700; /* 金色 */
+    background-color: rgba(255, 0, 0, 0.9); /* 赤色を少し透明に */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 光沢感のある影 */
+    text-shadow: 0 0 5px rgba(255, 215, 0, 1), 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.3); /* 発光効果 */
+}
+
 /* 敵のカードにはグラデーションを適用しない */
 #opponent-hand #cards .card {
     background: none; 
     animation: none; 
+    text-shadow: none;
 }
 
 @keyframes gradientAnimation {
