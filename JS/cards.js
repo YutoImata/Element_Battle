@@ -77,6 +77,8 @@ function createCardElement(card) {
     /* ハートとダイヤを赤色にする */
     if (card.suit === '♥' || card.suit === '♦') {
         cardElement.classList.add('heart-diamond')
+    } else if (card.suit === '♠' && card.rank === 'A') {
+        cardElement.classList.add('spade-A');
     }
     
     return cardElement;
