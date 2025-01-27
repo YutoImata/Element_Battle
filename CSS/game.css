@@ -147,12 +147,13 @@ main {
 #opponent-hand #cards .card {
     width: 30px; /* カードの幅を固定 */
     height: 30px; /* カードの高さを固定 */
-    background-color: blue;
+    background-color: blue !important; /* !important注意がほんと必要です */
     color: blue;
     border: 1px solid blue;
     display: flex;
     align-items: center;
     justify-content: center;
+    animation: none;
 }
 
 
@@ -182,6 +183,25 @@ main {
 .spade-A {
     color: #45a049;
 }
+
+.hart-7 {
+    color:  red;
+    background: linear-gradient(90deg, red, yellow, green, blue, red);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
+/* 敵のカードにはグラデーションを適用しない */
+#opponent-hand #cards .card {
+    background: none; 
+    animation: none; 
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
 
 /* プライヤーのカードが選択されたとき */
 .selected-card {
