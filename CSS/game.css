@@ -341,5 +341,5 @@ button:hover {
 }
 
 #overlay.show img {
-    opacity: 2;
+    opacity: 1; /* 透明度 */
 }
