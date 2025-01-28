@@ -272,7 +272,7 @@ button:hover {
 }
 
 /* 勝利と残念のレイアウト */
-#message-container {
+#message-container, #joker-message-container {
     position: absolute;
     top: 10px;
     width: 100%;
@@ -314,4 +314,3 @@ button:hover {
     background-color: #0056b3;
     transform: scale(1.1);
 }
-
