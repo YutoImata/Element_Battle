@@ -24,34 +24,42 @@ function applyCardEffect(card, isPlayer) {
     else if (card.suit === '♥') {
         if (isPlayer) {
             playerElementPoints += 2;
+            showScoreEffect(+2, isPlayer)
             console.log('自分が♥で+2されてる');
         } else {
             opponentElementPoints += 2;
+            showScoreEffect(+2, isPlayer)  // 相手の得点エフェクト
             console.log('相手が♥で+2されてる');
         }
     } else if (card.suit === '♦') {
         if (isPlayer) {
             playerElementPoints += 1;
+            showScoreEffect(+1, isPlayer)
             console.log('自分が♦で+1されてる');
         } else {
             opponentElementPoints += 1;
+            showScoreEffect(+1, isPlayer)  // 相手の得点エフェクト
             console.log('相手が♦で+1されてる');
         }
     } else if (card.suit === '♣') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 1);
-            console.log('自分が♣で-1されてる');
+            showScoreEffect(-1, !isPlayer)  // 相手の得点エフェクト
+            console.log('相手が♣で-1されてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 1);
-            console.log('相手が♣で-1されてる');
+            showScoreEffect(-1, !isPlayer)  // 自分の得点エフェクト
+            console.log('自分が♣で-1されてる');
         }
     } else if (card.suit === '♠') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 2);
-            console.log('自分が♠で-2されてる');
+            showScoreEffect(-2, !isPlayer)  // 相手の得点エフェクト
+            console.log('相手が♠で-2されてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 2);
-            console.log('相手が♠で-1されてる');
+            showScoreEffect(-2, !isPlayer)  // 自分の得点エフェクト
+            console.log('自分♠で-1されてる');
         }
     } else if (card.suit === 'J' && card.rank === 'oker') { /* console.logで確認したらこのように区別されていた */
         if (isPlayer) {
@@ -68,6 +76,38 @@ function applyCardEffect(card, isPlayer) {
    
     console.log('自分：', playerElementPoints);
     console.log('敵：', opponentElementPoints);
+}
+
+/* 得点を画面に表示してから1秒後に消すエフェクト */
+function showScoreEffect(scoreChange, isPlayer) {
+    const scoreElement = document.getElementById('scoreEffect');
+    
+    /* 得点変更メッセージの設定 */
+    scoreElement.textContent = (scoreChange > 0 ? "+" : "") + scoreChange;
+    scoreElement.style.color = scoreChange > 0 ? 'green' : 'red';  /* 増加は緑、減少は赤 */
+
+    /* 画面上に表示 */
+    scoreElement.style.display = 'block';
+
+    /* 表示する位置を調整 */
+    scoreElement.style.top = '100px';  
+
+    if (isPlayer) {
+        scoreElement.style.left = `${window.innerWidth * 0.55 - scoreElement.offsetWidth / 2}px`; /* プレイヤーは60%位置 */
+    } else {
+        scoreElement.style.left = `${window.innerWidth * 0.8 - scoreElement.offsetWidth / 2}px`;  /* 相手は80%位置 */
+    }
+
+    /* 1秒後にフェードアウトを開始 */
+    setTimeout(() => {
+        scoreElement.style.opacity = 0; 
+    }, 1000);
+
+    /* 2秒後に得点を非表示にして削除 */
+    setTimeout(() => {
+        scoreElement.style.display = 'none';
+        scoreElement.style.opacity = 1; /* 次回表示のために元の不透明度に戻す */
+    }, 2000);
 }
 
 /* Jokerを出した際に選択肢を画面上に出す */
@@ -121,7 +161,6 @@ function hideJokerOptions() {
     isSelectingJoker = false; /* ここでJokerのフラグを解除する */
     opponentTurn(); /* 敵のターンを開始する */
 }
-
 
 /* エレメントポイントを表示する関数 */
 function updateElementPointsDisplay() {

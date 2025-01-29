@@ -42,6 +42,17 @@ main {
     gap: 20px;
 }
 
+/* 得点が増減した際のエフェクト */
+#scoreEffect {
+    position: absolute;
+    font-size: 20px;
+    color: white;
+    display: none;
+    opacity: 1;
+    transition: opacity 1s;
+}
+
+
 #element-status div {
     background-color: #e0e0e0;
     padding: 5px;
