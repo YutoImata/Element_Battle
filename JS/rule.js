@@ -24,30 +24,34 @@ function applyCardEffect(card, isPlayer) {
     else if (card.suit === '♥') {
         if (isPlayer) {
             playerElementPoints += 2;
+            console.log('自分が♥で+2されてる');
         } else {
             opponentElementPoints += 2;
+            console.log('相手が♥で+2されてる');
         }
     } else if (card.suit === '♦') {
         if (isPlayer) {
             playerElementPoints += 1;
+            console.log('自分が♦で+1されてる');
         } else {
             opponentElementPoints += 1;
+            console.log('相手が♦で+1されてる');
         }
     } else if (card.suit === '♣') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 1);
-            console.log('クローバーでマイナスされてる');
+            console.log('自分が♣で-1されてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 1);
-            console.log('クローバーでマイナスされてる');
+            console.log('相手が♣で-1されてる');
         }
     } else if (card.suit === '♠') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 2);
-            console.log('スペードでマイナスされてる');
+            console.log('自分が♠で-2されてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 2);
-            console.log('スペードでマイナスされてる');
+            console.log('相手が♠で-1されてる');
         }
     } else if (card.suit === 'J' && card.rank === 'oker') { /* console.logで確認したらこのように区別されていた */
         if (isPlayer) {
@@ -61,6 +65,7 @@ function applyCardEffect(card, isPlayer) {
             }
         }
     }
+   
     console.log('自分：', playerElementPoints);
     console.log('敵：', opponentElementPoints);
 }
@@ -83,6 +88,9 @@ function showJokerOptions(isPlayer) {
         }
         hideJokerOptions();
         updateElementPointsDisplay(); /* エレメントポイントを更新 */
+        console.log('ジョーカー出した後の点数');
+        console.log('自分：', playerElementPoints);
+        console.log('敵：', opponentElementPoints);
         checkForWin(); /* 勝利しているかをチェック */
     };
 
@@ -92,6 +100,9 @@ function showJokerOptions(isPlayer) {
         }
         hideJokerOptions();
         updateElementPointsDisplay(); /* エレメントポイントを更新 */
+        console.log('ジョーカー出した後の点数');
+        console.log('自分：', playerElementPoints);
+        console.log('敵：', opponentElementPoints);
         checkForWin(); /* 勝利しているかをチェック */
     };
 }

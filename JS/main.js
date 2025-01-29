@@ -17,7 +17,7 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
     /* カードを引くボタンを押したらカードを引く */
     document.getElementById('draw-card').addEventListener('click', () => {
         const drawCard = deck.draw();
-        playerTurn();
+        // playerTurn();　/* いったんコメントアウトしてエラーが出たら要検討（多分要らん) */
 
         addCardToPlayerHand(drawCard)
             playerDrawnCard = true;

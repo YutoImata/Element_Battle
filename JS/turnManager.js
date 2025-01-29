@@ -16,34 +16,38 @@ function startTurn() {
 
  /* プレイヤーのターン */
  function playerTurn() {
+    console.log('自分のターンが開始');
     document.getElementById('draw-card').disabled = false; 
     document.getElementById('play-card').disabled = true; /* まずはカードを引くことしかできないようにする */
     specialCard = false; /* 特殊カードのフラグをリセット */
  }
 
  /* 相手のターン */
- function opponentTurn() {
-    /* ここでプレイヤーの追跡の変数をどちらもリセットする */
-    playerDrawnCard = false;
-    playerPlayedCard = false;
-    specialCard = false; /* 特殊カードのフラグをリセット */
-    console.log('リセットできてるよ');
+function opponentTurn() {
+    if (!isSelectingJoker) {
+        console.log('相手のターンが開始');
+        /* ここでプレイヤーの追跡の変数をどちらもリセットする */
+        playerDrawnCard = false;
+        playerPlayedCard = false;
+        specialCard = false; /* 特殊カードのフラグをリセット */
+        
 
-    document.getElementById('draw-card').disabled = true;
-    document.getElementById('play-card').disabled = true;
+        document.getElementById('draw-card').disabled = true;
+        document.getElementById('play-card').disabled = true;
 
-    setTimeout(() => {
-        if (!isSelectingJoker) {
-        addCardToOpponentHand(deck.draw());
-        /* 相手がカードを出す */
         setTimeout(() => {
-            const card = selectCardForOpponent();
-            playOpponentCard(card);
-            endTurn();
+            addCardToOpponentHand(deck.draw());
+            
+            /* 相手がカードを出す */
+            setTimeout(() => {
+                const card = selectCardForOpponent();
+                playOpponentCard(card);
+                endTurn();
+            }, 1000);
         }, 1000);
     }
-    }, 1000);
- }
+}
+
 
  /* ターン終了時の処理 */
  function endTurn() {

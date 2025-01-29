@@ -23,13 +23,4 @@ function logOpponentCards(cards) {
 }
 
 
-/* エレメントポイントを表示する関数 */
-function updateElementPointsDisplay() {
-    console.log('Updating element points display...');
-    console.log('Player points:', playerElementPoints);
-    console.log('Opponent points:', opponentElementPoints);
-    document.getElementById('player-points').textContent = playerElementPoints;
-    document.getElementById('opponent-points').textContent = opponentElementPoints;
-}
-
 
