@@ -4,3 +4,9 @@ let isSelectingJoker = true;　
 にしていて、プレイヤーが基本的にJokerを選択している状態になっていた
 let isSelectingJoker = false;
 のように変更することで直った
+
+②Jokerを出した後すぐポイントの増減の選択肢を選んだら相手が2ターン行動するバグ
+→isSelectingJoker = false; 
+の位置が不適切で、そのコードに行く道中で不要な関数が呼ばれていて結果的に2ターン行動することになっていた
+console.log();
+をたくさん使用したら解決できる
