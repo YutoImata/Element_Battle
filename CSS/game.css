@@ -143,6 +143,7 @@ main {
 .debug #opponent-hand #cards .card {
     visibility: visible; /* 表示する */
 }
+
 /*敵の手札は見えてないけないため、青色で塗りつぶす（コメントアウトしたら相手の手札も見れるようになる） */
 #opponent-hand #cards .card {
     width: 30px; /* カードの幅を固定 */
@@ -154,7 +155,13 @@ main {
     align-items: center;
     justify-content: center;
     animation: none;
+    user-select: none; /* 敵のカードをタップしてもカードの内容が見えないようにテキスト選択を無効化する */
+
+    /* -webkit-user-select: none;  Safari対応 */
+    /* -moz-user-select: none;  Firefox対応 */
+    /* -ms-user-select: none; 旧IE対応 */
 }
+
 
 
 #cards { /* プレイヤーと相手のカードを表示するためのclass */
@@ -330,8 +337,7 @@ button:hover {
 }
 
 #overlay img {
-    max-width: 90%;
-    max-height: 90%;
+    max-width: 90%;    max-height: 90%;
     opacity: 0; /* 初期状態を透明に設定 */
     transition: opacity 1s ease-in-out;
 }
