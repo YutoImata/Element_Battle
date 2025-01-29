@@ -1,0 +1,6 @@
+①Joker以外を出したときに相手のターンがスタートしない
+→変数の定義の際に 
+let isSelectingJoker = true;　
+にしていて、プレイヤーが基本的にJokerを選択している状態になっていた
+let isSelectingJoker = false;
+のように変更することで直った

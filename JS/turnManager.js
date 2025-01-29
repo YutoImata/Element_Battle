@@ -27,7 +27,7 @@ function startTurn() {
     playerDrawnCard = false;
     playerPlayedCard = false;
     specialCard = false; /* 特殊カードのフラグをリセット */
-    // console.log('リセットできてるよ');
+    console.log('リセットできてるよ');
 
     document.getElementById('draw-card').disabled = true;
     document.getElementById('play-card').disabled = true;
@@ -59,6 +59,7 @@ function startTurn() {
 
  /* 相手がランダムに手札を出す処理 */
  function selectCardForOpponent() {
+    // console.log('相手が手札を出します');
     const opponentHand = document.querySelector('#opponent-hand #cards').children;
     const randomIndex = Math.floor(Math.random() * opponentHand.length);
     return opponentHand[randomIndex];

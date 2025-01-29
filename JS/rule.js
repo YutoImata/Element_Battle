@@ -9,7 +9,7 @@ let playerElementPoints = 0;
 let opponentElementPoints = 0;
 
 /* Jokerが今選択されているかどうか */
-let isSelectingJoker = true;
+let isSelectingJoker = false;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
