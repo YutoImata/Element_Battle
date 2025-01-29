@@ -10,7 +10,7 @@
 window.suits = ['♥', '♦', '♣', '♠']; /* スート（マーク）の定義 */
 // window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
 
-window.ranks = ['A']; /* 数字の定義 */
+window.ranks = ['A', '7', 'K']; /* 数字の定義 */
 
 /*別のJSファイルで呼び出すためグローバル変数にする */
 window.Card = class {
@@ -74,11 +74,13 @@ function createCardElement(card) {
     cardElement.className = 'card';
     cardElement.textContent = card.toString();
 
-    /* ハートとダイヤを赤色にする */
+    /* カードに色をつけるためにclassを付与する */
     if ((card.suit === '♠' && card.rank === 'A')) {
         cardElement.classList.add('spade-A');
     } else if (card.suit === '♥' && card.rank === '7' ) {
         cardElement.classList.add('hart-7');
+    } else if (card.suit === '♦' && card.rank === '7' ) {
+        cardElement.classList.add('diamond-7');
     } else if ((card.suit === '♥' && card.rank === 'K') || ( card.suit === '♦' && card.rank === 'K')) {
         cardElement.classList.add('heart-diamond-K');
     } else if ((card.suit === '♣' && card.rank === 'K') || ( card.suit === '♠' && card.rank === 'K')) {

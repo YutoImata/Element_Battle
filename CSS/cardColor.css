@@ -62,6 +62,13 @@
     animation: gradientAnimation 5s ease infinite;
 }
 
+.diamond-7 {
+    color:  red;
+    background: linear-gradient(90deg, red, yellow);
+    background-size: 200% 200%;
+    animation: gradientAnimation 5s ease infinite;
+}
+
 .spade-club-K {
     color: #FFD700; /* 金色 */
     background-color: rgba(0, 0, 0, 0.8); /* 黒色を少し透明に */

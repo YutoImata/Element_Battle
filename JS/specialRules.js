@@ -19,6 +19,15 @@ function applySpecialCardRules(card, isPlayer) {
     } else if (card.suit === '♥' && card.rank === '7') {
         /* 得点が2倍になる */
         if (isPlayer) {
+            playerElementPoints *= 3;
+        } else {
+            opponentElementPoints *= 3;
+        }
+        specialCard = true; /* フラグをtrueにする */
+
+    } else if (card.suit === '♦' && card.rank === '7') {
+        /* 得点が2倍になる */
+        if (isPlayer) {
             playerElementPoints *= 2;
         } else {
             opponentElementPoints *= 2;
