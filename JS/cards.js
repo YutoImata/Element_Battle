@@ -85,8 +85,12 @@ function createCardElement(card) {
         cardElement.classList.add('heart-diamond-K');
     } else if ((card.suit === '♣' && card.rank === 'K') || ( card.suit === '♠' && card.rank === 'K')) {
         cardElement.classList.add('spade-club-K');
-    }else if (card.suit === '♥' || card.suit === '♦') {
+    } else if (card.suit === '♥' || card.suit === '♦') {
         cardElement.classList.add('heart-diamond')
+    } else if (card.suit === '♠' || card.suit === '♣') {
+        cardElement.classList.add('spade-club');
+    } else {
+        cardElement.classList.add('joker');
     }
     return cardElement;
 }
@@ -116,7 +120,7 @@ function addCardToOpponentHand(card) {
     const cardElement = createCardElement(card);
     opponentHand.appendChild(cardElement);
 
-    // logOpponentCards(opponentHand.children); /* デバック */
+    logOpponentCards(opponentHand.children); /* デバック */
 }
 
 

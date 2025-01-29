@@ -43,9 +43,6 @@
 }
 
  /* カードの色を変更する */
-.heart-diamond {/* ハートとダイヤはカードを赤くする */
-    color:  red;
-}
 
 .spade-A {
     color:  black;
@@ -81,4 +78,20 @@
     background-color: rgba(255, 0, 0, 0.9); /* 赤色を少し透明に */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* 光沢感のある影 */
     text-shadow: 0 0 5px rgba(255, 215, 0, 1), 0 0 10px rgba(255, 215, 0, 0.8), 0 0 20px rgba(255, 215, 0, 0.3); /* 発光効果 */
+}
+
+.heart-diamond {/* ハートとダイヤはカードを赤くする */
+    color:  red;
+}
+
+.spade-club {
+    color:  black;
+}
+
+.joker {
+    color: black;
+    text-shadow: 2px 2px 5px white, -2px -2px 5px white, 2px -2px 5px white, -2px 2px 5px white;
+    background: linear-gradient(45deg, blue, red);
+    background-size: 200% 200%;
+    animation: gradientAnimation 3s ease infinite;
 }
