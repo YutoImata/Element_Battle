@@ -34,7 +34,7 @@ function applyCardEffect(card, isPlayer) {
     } else if (card.suit === '♦') {
         if (isPlayer) {
             playerElementPoints += 1;
-            showScoreEffect(+1, isPlayer)
+            showScoreEffect(+1, isPlayer);
             console.log('自分が♦で+1されてる');
         } else {
             opponentElementPoints += 1;
@@ -44,21 +44,21 @@ function applyCardEffect(card, isPlayer) {
     } else if (card.suit === '♣') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 1);
-            showScoreEffect(-1, !isPlayer)  // 相手の得点エフェクト
+            showScoreEffect(-1, !isPlayer);  // 相手の得点エフェクト
             console.log('相手が♣で-1されてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 1);
-            showScoreEffect(-1, !isPlayer)  // 自分の得点エフェクト
+            showScoreEffect(-1, !isPlayer);  // 自分の得点エフェクト
             console.log('自分が♣で-1されてる');
         }
     } else if (card.suit === '♠') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 2);
-            showScoreEffect(-2, !isPlayer)  // 相手の得点エフェクト
+            showScoreEffect(-2, !isPlayer);  // 相手の得点エフェクト
             console.log('相手が♠で-2されてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 2);
-            showScoreEffect(-2, !isPlayer)  // 自分の得点エフェクト
+            showScoreEffect(-2, !isPlayer);  // 自分の得点エフェクト
             console.log('自分♠で-1されてる');
         }
     } else if (card.suit === 'J' && card.rank === 'oker') { /* console.logで確認したらこのように区別されていた */
@@ -93,21 +93,21 @@ function showScoreEffect(scoreChange, isPlayer) {
     scoreElement.style.top = '100px';  
 
     if (isPlayer) {
-        scoreElement.style.left = `${window.innerWidth * 0.55 - scoreElement.offsetWidth / 2}px`; /* プレイヤーは60%位置 */
+        scoreElement.style.left = `${window.innerWidth * 0.5 - scoreElement.offsetWidth / 2}px`; /* プレイヤーは55%位置 */
     } else {
-        scoreElement.style.left = `${window.innerWidth * 0.8 - scoreElement.offsetWidth / 2}px`;  /* 相手は80%位置 */
+        scoreElement.style.left = `${window.innerWidth * 0.7 - scoreElement.offsetWidth / 2}px`;  /* 相手は80%位置 */
     }
 
-    /* 1秒後にフェードアウトを開始 */
+    /* 0.5秒後にフェードアウトを開始 */
     setTimeout(() => {
         scoreElement.style.opacity = 0; 
-    }, 1000);
+    }, 500);
 
-    /* 2秒後に得点を非表示にして削除 */
+    /* 1.5秒後に得点を非表示にして削除 */
     setTimeout(() => {
         scoreElement.style.display = 'none';
         scoreElement.style.opacity = 1; /* 次回表示のために元の不透明度に戻す */
-    }, 2000);
+    }, 1500);
 }
 
 /* Jokerを出した際に選択肢を画面上に出す */
