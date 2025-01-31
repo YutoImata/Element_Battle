@@ -1,6 +1,6 @@
 /*
  *
- * specialRules.js
+ * specialCards.js
  * 
  */
 
