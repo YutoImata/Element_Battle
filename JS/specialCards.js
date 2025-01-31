@@ -57,8 +57,8 @@ function applySpecialCardRules(card, isPlayer) {
         specialCard = true;
     }
 
-    console.log('自分：', playerElementPoints);
-    console.log('敵：', opponentElementPoints);
+    // console.log('自分：', playerElementPoints);
+    // console.log('敵：', opponentElementPoints);
 
 }
 

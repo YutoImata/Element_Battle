@@ -74,8 +74,8 @@ function applyCardEffect(card, isPlayer) {
         }
     }
    
-    console.log('自分：', playerElementPoints);
-    console.log('敵：', opponentElementPoints);
+    // console.log('自分：', playerElementPoints);
+    // console.log('敵：', opponentElementPoints);
 }
 
 /* 得点を画面に表示してから1秒後に消すエフェクト */
@@ -128,9 +128,9 @@ function showJokerOptions(isPlayer) {
         }
         hideJokerOptions();
         updateElementPointsDisplay(); /* エレメントポイントを更新 */
-        console.log('ジョーカー出した後の点数');
-        console.log('自分：', playerElementPoints);
-        console.log('敵：', opponentElementPoints);
+        // console.log('ジョーカー出した後の点数');
+        // console.log('自分：', playerElementPoints);
+        // console.log('敵：', opponentElementPoints);
         checkForWin(); /* 勝利しているかをチェック */
     };
 
@@ -140,9 +140,9 @@ function showJokerOptions(isPlayer) {
         }
         hideJokerOptions();
         updateElementPointsDisplay(); /* エレメントポイントを更新 */
-        console.log('ジョーカー出した後の点数');
-        console.log('自分：', playerElementPoints);
-        console.log('敵：', opponentElementPoints);
+        // console.log('ジョーカー出した後の点数');
+        // console.log('自分：', playerElementPoints);
+        // console.log('敵：', opponentElementPoints);
         checkForWin(); /* 勝利しているかをチェック */
     };
 }
