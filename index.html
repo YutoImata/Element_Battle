@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>タイトル画面</title>
     <link rel="stylesheet" href="CSS/index.css">
-    <!-- font-awesomeの読み込み（もしかしたらやめるかも） -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="CSS/cardColor.css">
 </head>
 <body>
     <header>
@@ -51,28 +50,45 @@
                         <p>他のプレイヤーのエレメントを<br><span id="decrease">1ポイント減少</span>させます。</p>
                     </div>
                 </div>
-                <div class="mark-row">
-                    <div class="mark-item">
-                        <h3>Joker</h3>
-                        <p>以下の2つから選べます。</p>
-                        <p>自分のエレメントを<span id="increase">5ポイント強化</span>されます。</p><br>
-                        <p>自分のエレメントを<span id="decrease">5ポイント減少</span>させます。</p>
-                    </div>
-                </div>
         </div>
 
             </div>
             <h2>特別ルール</h2>
             <div class="mark-row">
                 <div class="mark-item">
-                    <img src="Pictures/Harts.png" alt="ハート" class="suits-img">
-                    <p>♥7：出したプレイヤーのエレメントポイントを<br><span id="increase">2倍</span>にさせます。</p>
+                    <h3>Joker</h3>
+                    <p>以下の2つから選べます。</p>
+                    <p>自分のエレメントを<span id="increase">5ポイント強化</span>されます。</p>
+                    <p>相手のエレメントを<span id="decrease">5ポイント減少</span>させます。</p>
                 </div>
                 <div class="mark-item">
-                    <img src="Pictures/Spades.png" alt="スペード" class="suits-img">
-                    <p>他のプレイヤーのエレメントを<br><span id="decrease">2ポイント減少</span>させます。</p>
+                    <div class="card spade-A" >♠A</div>
+                    <p>自分と相手のエレメントポイントが入れ替わります。</p>
+                </div>
+                
+            </div>
+            <div class="mark-row">
+                <div class="mark-item">
+                    <div class="card hart-7">♥7</div>
+                    <p>自分のエレメントを<br><span id="increase">3倍ポイント強化</span>されます。</p>
+                </div>
+                <div class="mark-item">
+                    <div class="card diamond-7" >♦7</div>
+                    <p>自分のエレメントを<br><span id="increase">2倍ポイント強化</span>されます。</p>
                 </div>
             </div>
+
+            <div class="mark-row">
+                <div class="mark-item">
+                    <div class="card heart-diamond-K">♥K・♦K</div>
+                    <p>自分のエレメントを<br><span id="increase">3ポイント強化</span>されます。</p>
+                </div>
+                <div class="mark-item">
+                    <div class="card spade-club-K" >♠K・♣K</div>
+                    <p>相手のエレメントを<span id="decrease">3ポイント減少</span>させます。</p>
+                </div>
+            </div>
+    
 
 
      </section>
