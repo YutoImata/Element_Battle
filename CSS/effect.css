@@ -1,0 +1,40 @@
+/*
+ *
+ * effect.css
+ * 
+ */
+
+ /* パーティクル全体のコンテナ */
+.particle-container {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+/* 1つ1つのパーティクル */
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: gold;
+    border-radius: 50%;
+    opacity: 1;
+    animation: particleFade 1s ease-out forwards, particleMove 1s ease-out forwards;
+}
+
+/* パーティクルの消滅 */
+@keyframes particleFade {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* ランダムな位置に動く */
+@keyframes particleMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(calc(-50px + 100px * random()), calc(-50px + 100px * random())); }
+}
+
