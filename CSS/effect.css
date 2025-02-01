@@ -4,7 +4,7 @@
  * 
  */
 
- /* パーティクル全体のコンテナ */
+/* パーティクル全体のコンテナ */
 .particle-container {
     position: absolute;
     width: 100px;
@@ -13,6 +13,9 @@
     top: 50%;
     transform: translate(-50%, -50%);
     pointer-events: none;
+    
+    /* border: 1px solid red;  */
+
 }
 
 /* 1つ1つのパーティクル */
@@ -23,7 +26,7 @@
     background-color: gold;
     border-radius: 50%;
     opacity: 1;
-    animation: particleFade 1s ease-out forwards, particleMove 1s ease-out forwards;
+    animation: particleFade 1s ease-out forwards;
 }
 
 /* パーティクルの消滅 */
@@ -31,10 +34,3 @@
     0% { opacity: 1; }
     100% { opacity: 0; }
 }
-
-/* ランダムな位置に動く */
-@keyframes particleMove {
-    0% { transform: translate(0, 0); }
-    100% { transform: translate(calc(-50px + 100px * random()), calc(-50px + 100px * random())); }
-}
-

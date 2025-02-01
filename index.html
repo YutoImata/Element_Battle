@@ -7,6 +7,9 @@
     <title>タイトル画面</title>
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/cardColor.css">
+    <link rel="stylesheet" href="CSS/effect.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -32,31 +35,32 @@
         <div class="mark-row">
             <div class="mark-item">
                 <img src="Pictures/Harts.png" alt="ハート" class="suits-img">
-                <p>自分のエレメントを<br><span id="increase">2ポイント強化</span>されます</p>
+                <p>自分のエレメントを<br><span class="increase">2ポイント強化</span>されます</p>
             </div>
             <div class="mark-item">
                 <img src="Pictures/Spades.png" alt="スペード" class="suits-img">
-                <p>他のプレイヤーのエレメントを<br><span id="decrease">2ポイント減少</span>させます</p>
+                <p>他のプレイヤーのエレメントを<br><span class="decrease">2ポイント減少</span>させます</p>
             </div>
         </div>
         <div class="mark-row">
             <div class="mark-item">
                 <img src="Pictures/Diamonds.png" alt="ダイヤ" class="suits-img">
-                <p>自分のエレメントを<br><span id="increase">1ポイント強化</span>されます。</p>
+                <p>自分のエレメントを<br><span class="increase">1ポイント強化</span>されます。</p>
             </div>
             <div class="mark-item">
                 <img src="Pictures/Clubs.png" alt="クローバー" class="suits-img">
-                <p>他のプレイヤーのエレメントを<br><span id="decrease">1ポイント減少</span>させます。</p>
+                <p>他のプレイヤーのエレメントを<br><span class="decrease">1ポイント減少</span>させます。</p>
             </div>
         </div>
 
+        <!-- 特殊カードの設計 -->
         <h2>特殊カード</h2>
         <div class="mark-row">
             <div class="mark-item">
-                <h3>Joker</h3>
+                <div class="card joker">Joker</div>
                 <p>以下の2つから選べます。</p>
-                <p>自分のエレメントを<span id="increase">5ポイント強化</span>されます。</p>
-                <p>相手のエレメントを<span id="decrease">5ポイント減少</span>させます。</p>
+                <p>自分のエレメントを<span class="increase">5ポイント強化</span>されます。</p>
+                <p>相手のエレメントを<span class="decrease">5ポイント減少</span>させます。</p>
             </div>
             <div class="mark-item">
                 <div class="card spade-A">♠A</div>
@@ -67,43 +71,53 @@
         <div class="mark-row">
             <div class="mark-item">
                 <div class="card hart-7">♥7</div>
-                <p>自分のエレメントポイントが<br><span id="increase">3倍強化</span>されます。</p>
+                <p>自分のエレメントポイントが<br><span class="increase">3倍強化</span>されます。</p>
             </div>
             <div class="mark-item">
                 <div class="card diamond-7">♦7</div>
-                <p>自分のエレメントポイントが<br><span id="increase">2倍強化</span>されます。</p>
+                <p>自分のエレメントポイントが<br><span class="increase">2倍強化</span>されます。</p>
             </div>
         </div>
 
         <div class="mark-row">
             <div class="mark-item">
                 <div class="card heart-diamond-K">♥K・♦K</div>
-                <p>自分のエレメントを<br><span id="increase">3ポイント強化</span>されます。</p>
+                <p>自分のエレメントを<br><span class="increase">3ポイント強化</span>されます。</p>
             </div>
             <div class="mark-item">
                 <div class="card spade-club-K">♠K・♣K</div>
-                <p>相手のエレメントを<span id="decrease">3ポイント減少</span>させます。</p>
+                <p>相手のエレメントを<span class="decrease">3ポイント減少</span>させます。</p>
             </div>
         </div>
+
+        <!-- 特殊ルールの設計 -->
+        <h2>特殊ルール</h2>
+        <div class="mark-row">
+            <div class="mark-item">
+                <h3 id="twinSuit">Twin Suit</h3>
+                <div class="particle-container" id="particleContainer"></div>
+                <p>同じマークを2ターン連続で出したら<br><span class="other-color">もう1枚カードが追加</span>されます。</p>
+                <p>※相手のターンで出したマークの次のターンで自分が同じマークを出しても効果は発動しません。</p>
+            </div>
+            <div class="mark-item">
+                <h3 id="twinNumber">Twin Number</h3>
+                <div class="particle-container" id="particleContainer"></div>
+                <p>同じマークを2ターン連続で出したら<br><span class="other-color">もう1枚カードが追加</span>されます。</p>
+                <p>※相手のターンで出したマークの次のターンで自分が同じマークを出しても効果は発動しません。</p>
+            </div>
+        </div>
+        
     </section>
 
     <!-- ゲームスタートボタンの配置 -->
-    <main>
         <section id="gama-page">
             <button id="gama-page-button">Enter Game!</button>
         </section>
-    </main>
 
     <footer>
         <p>&copy; 2025 Element_Battle</p>
     </footer>
-
-    <script>
-        /* タイトル画面からゲーム画面の移動 */
-        document.getElementById('gama-page-button').addEventListener('click', function () {
-            window.location.href = 'HTML/game.html';
-        })
-    </script>
+    <script src="JS/index.js"></script>
 
 </body>
 

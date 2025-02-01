@@ -15,7 +15,7 @@ let isSelectingJoker = false;
 function applyCardEffect(card, isPlayer) {
     // console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
 
-    triggerSuitComboEffect(card, isPlayer);
+    twinSuit(card, isPlayer);
     applySpecialCardRules(card, isPlayer);
 
     if (specialCard) {

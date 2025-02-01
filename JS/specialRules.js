@@ -15,7 +15,7 @@ let opponentPreviousSuit = null; /*  前回出したスート（相手） */
  */
 
 /* 同じスートを2回連続で出したかを確認する関数 */
-function triggerSuitComboEffect(card, isPlayer) {
+function twinSuit(card, isPlayer) {
     let previousSuit;
     if (isPlayer) {
         previousSuit = playerPreviousSuit;
