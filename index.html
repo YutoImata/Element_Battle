@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,17 @@
     <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/cardColor.css">
 </head>
+
 <body>
     <header>
         <h1>Element Battle</h1>
     </header>
 
-   
-
     <!-- ルール説明セクション -->
-     <section id="game-rules">
+    <section id="game-rules">
         <h2>ルール説明</h2>
         <p>
-            Element Battleは自分の手札を使用し「Element」を強化して、
-            先にElement Pointが20点に達したほうが勝ちです！
+            Element Battleは自分の手札を使用し「Element」を強化して、先にElement Pointが20点に達したほうが勝ちです！
         </p>
 
         <ul>
@@ -29,91 +28,83 @@
             <li>4:Element Pointが10点に達したほうが勝ちです！</li>
         </ul>
 
-            <h2>各マークの解説</h2>
-                <div class="mark-row">
-                    <div class="mark-item">
-                        <img src="Pictures/Harts.png" alt="ハート" class="suits-img">
-                        <p>自分のエレメントを<br><span id="increase">2ポイント強化</span>されます</p>
-                    </div>
-                    <div class="mark-item">
-                        <img src="Pictures/Spades.png" alt="スペード" class="suits-img">
-                        <p>他のプレイヤーのエレメントを<br><span id="decrease">2ポイント減少</span>させます</p>
-                    </div>
-                </div>
-                <div class="mark-row">
-                    <div class="mark-item">
-                        <img src="Pictures/Diamonds.png" alt="ダイヤ" class="suits-img">
-                        <p>自分のエレメントを<br><span id="increase">1ポイント強化</span>されます。</p>
-                    </div>
-                    <div class="mark-item">
-                        <img src="Pictures/Clubs.png" alt="クローバー" class="suits-img">
-                        <p>他のプレイヤーのエレメントを<br><span id="decrease">1ポイント減少</span>させます。</p>
-                    </div>
-                </div>
+        <h2>各マークの解説</h2>
+        <div class="mark-row">
+            <div class="mark-item">
+                <img src="Pictures/Harts.png" alt="ハート" class="suits-img">
+                <p>自分のエレメントを<br><span id="increase">2ポイント強化</span>されます</p>
+            </div>
+            <div class="mark-item">
+                <img src="Pictures/Spades.png" alt="スペード" class="suits-img">
+                <p>他のプレイヤーのエレメントを<br><span id="decrease">2ポイント減少</span>させます</p>
+            </div>
+        </div>
+        <div class="mark-row">
+            <div class="mark-item">
+                <img src="Pictures/Diamonds.png" alt="ダイヤ" class="suits-img">
+                <p>自分のエレメントを<br><span id="increase">1ポイント強化</span>されます。</p>
+            </div>
+            <div class="mark-item">
+                <img src="Pictures/Clubs.png" alt="クローバー" class="suits-img">
+                <p>他のプレイヤーのエレメントを<br><span id="decrease">1ポイント減少</span>させます。</p>
+            </div>
         </div>
 
+        <h2>特殊カード</h2>
+        <div class="mark-row">
+            <div class="mark-item">
+                <h3>Joker</h3>
+                <p>以下の2つから選べます。</p>
+                <p>自分のエレメントを<span id="increase">5ポイント強化</span>されます。</p>
+                <p>相手のエレメントを<span id="decrease">5ポイント減少</span>させます。</p>
             </div>
-            <h2>特別ルール</h2>
-            <div class="mark-row">
-                <div class="mark-item">
-                    <h3>Joker</h3>
-                    <p>以下の2つから選べます。</p>
-                    <p>自分のエレメントを<span id="increase">5ポイント強化</span>されます。</p>
-                    <p>相手のエレメントを<span id="decrease">5ポイント減少</span>させます。</p>
-                </div>
-                <div class="mark-item">
-                    <div class="card spade-A" >♠A</div>
-                    <p>自分と相手のエレメントポイントが入れ替わります。</p>
-                </div>
-                
+            <div class="mark-item">
+                <div class="card spade-A">♠A</div>
+                <p>自分と相手のエレメントポイントが入れ替わります。</p>
             </div>
-            <div class="mark-row">
-                <div class="mark-item">
-                    <div class="card hart-7">♥7</div>
-                    <p>自分のエレメントを<br><span id="increase">3倍ポイント強化</span>されます。</p>
-                </div>
-                <div class="mark-item">
-                    <div class="card diamond-7" >♦7</div>
-                    <p>自分のエレメントを<br><span id="increase">2倍ポイント強化</span>されます。</p>
-                </div>
+        </div>
+
+        <div class="mark-row">
+            <div class="mark-item">
+                <div class="card hart-7">♥7</div>
+                <p>自分のエレメントポイントが<br><span id="increase">3倍強化</span>されます。</p>
             </div>
-
-            <div class="mark-row">
-                <div class="mark-item">
-                    <div class="card heart-diamond-K">♥K・♦K</div>
-                    <p>自分のエレメントを<br><span id="increase">3ポイント強化</span>されます。</p>
-                </div>
-                <div class="mark-item">
-                    <div class="card spade-club-K" >♠K・♣K</div>
-                    <p>相手のエレメントを<span id="decrease">3ポイント減少</span>させます。</p>
-                </div>
+            <div class="mark-item">
+                <div class="card diamond-7">♦7</div>
+                <p>自分のエレメントポイントが<br><span id="increase">2倍強化</span>されます。</p>
             </div>
-    
+        </div>
 
+        <div class="mark-row">
+            <div class="mark-item">
+                <div class="card heart-diamond-K">♥K・♦K</div>
+                <p>自分のエレメントを<br><span id="increase">3ポイント強化</span>されます。</p>
+            </div>
+            <div class="mark-item">
+                <div class="card spade-club-K">♠K・♣K</div>
+                <p>相手のエレメントを<span id="decrease">3ポイント減少</span>させます。</p>
+            </div>
+        </div>
+    </section>
 
-     </section>
-
-
-     <!-- ゲームスタートボタンの配置 -->
-     <main>
+    <!-- ゲームスタートボタンの配置 -->
+    <main>
         <section id="gama-page">
             <button id="gama-page-button">Enter Game!</button>
         </section>
     </main>
 
-
     <footer>
         <p>&copy; 2025 Element_Battle</p>
     </footer>
 
-    
     <script>
         /* タイトル画面からゲーム画面の移動 */
-    document.getElementById('gama-page-button').addEventListener('click',function(){
-    window.location.href = 'HTML/game.html';
-    })
-    
+        document.getElementById('gama-page-button').addEventListener('click', function () {
+            window.location.href = 'HTML/game.html';
+        })
     </script>
 
 </body>
+
 </html>

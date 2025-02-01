@@ -89,11 +89,11 @@ h1 {
 
 /* エレメントポイントの「強化」と、「減少」の色 */
 #increase {
-    color: red;
+    color: green;
 }
 
 #decrease {
-    color: blue;
+    color: red;
 }
 
 /* start buttonのレイアウト */
