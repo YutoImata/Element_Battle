@@ -10,19 +10,6 @@ body {
     justify-content: center;
 }
 
-/* トランプの背景 */
-
-
-/* 背景用のカードの基本スタイル */
-#background div {
-    position: absolute;
-    font-size: 100px; /* カードのサイズ */
-    color: rgba(128, 128, 128, 0.5);
-    opacity: 0.3;
-}
-
-
-
 /* 上部のレイアウト */
 header {
     background-color: #4CAF50;

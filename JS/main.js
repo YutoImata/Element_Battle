@@ -48,6 +48,7 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
 /* ページが読み込まれたときに呼び出す関数を入れる(1度だけ呼び出せれば大丈夫なのを入れる) */
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('start-button').addEventListener('click', () => {
+        generateCardsBackground(); /* 背景をトランプ柄にする */
         document.getElementById('game-board').classList.remove('transparent-background');
         document.getElementById('start-game').style.display = 'none';
         dealInitialCards(); /* カードを５枚配るのと、背景の透明化を解除する */

@@ -78,7 +78,7 @@ function generateCardsBackground() {
         card.style.position = 'absolute';
         card.style.fontSize = `${cardSize}px`;
         card.style.color = 'rgba(128, 128, 128, 0.5)'; 
-        card.style.opacity = '0.3'; 
+        card.style.opacity = '0.15'; 
 
         card.style.left = `${xPos}px`;
         card.style.top = `${yPos}px`;
