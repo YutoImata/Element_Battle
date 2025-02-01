@@ -10,6 +10,19 @@ body {
     justify-content: center;
 }
 
+/* トランプの背景 */
+
+
+/* 背景用のカードの基本スタイル */
+#background div {
+    position: absolute;
+    font-size: 100px; /* カードのサイズ */
+    color: rgba(128, 128, 128, 0.5);
+    opacity: 0.3;
+}
+
+
+
 /* 上部のレイアウト */
 header {
     background-color: #4CAF50;
@@ -39,8 +52,10 @@ h1 {
 }
 
 #game-rules h2 {
+    font-size: 30px;
     text-align: center;
     color: #4CAF50;
+    margin: 40px;
 } 
 
 #game-rules p {
@@ -88,12 +103,17 @@ h1 {
 }
 
 /* エレメントポイントの「強化」と、「減少」の色 */
-#increase {
+.increase {
     color: green;
 }
 
-#decrease {
+.decrease {
     color: red;
+}
+
+/* その他の重要な部分の色（青） */
+.other-color {
+    color: blue;
 }
 
 /* start buttonのレイアウト */
@@ -127,6 +147,15 @@ h1 {
     0%{ background-position: 0% 50%;}
     50% { background-position: 100% 50%;}
     100% { background-position: 0% 50%;}
+}
+
+/* 特殊ルールのレイアウト */
+/* Twin Elementの文字にLobsterフォントを適用 */
+#twinSuit {
+    font-family: 'Lobster', cursive;
+    font-size: 36px;  /* フォントサイズを調整 */
+    color: #FFD700;  /* おしゃれな金色 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 文字に影をつけて立体感を出す */
 }
 
 

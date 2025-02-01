@@ -4,7 +4,12 @@
  * 
  */
 
+/* HTMLページを起動した際に行う処理 */
 window.addEventListener("load", function() {
+    /* 背景をトランプ柄にする関数の呼び出し */
+    generateCardsBackground();
+
+    /* 特殊ルールのエフェクトの生成 */
     const particleContainer = document.getElementById("particleContainer");
     const twinSuit = document.getElementById("twinSuit");
 
@@ -46,7 +51,52 @@ window.addEventListener("load", function() {
     setInterval(createParticle, 100);
 });
 
-/* タイトル画面からゲーム画面の移動 */
-document.getElementById('gama-page-button').addEventListener('click', function () {
-    window.location.href = 'HTML/game.html';
-})
+/* 背景をトランプにする */
+function generateCardsBackground() {
+    const suits = ['♠', '♥', '♦', '♣']; 
+    const body = document.body;
+    
+    const backgroundDiv = document.createElement('div');
+    backgroundDiv.id = 'background';
+    body.appendChild(backgroundDiv);
+
+    /* 柄を生成する数 */
+    const totalCards = Math.floor((window.innerWidth * window.innerHeight) / 10000); 
+
+    let xPos = 0; 
+    let yPos = 0; 
+    const cardSize = 100; 
+
+    
+    for (let i = 0; i < totalCards; i++) {
+        
+        const card = document.createElement('div');
+        const suit = suits[i % suits.length]; 
+        card.innerHTML = suit;
+
+        /* レイアウトの調整 */
+        card.style.position = 'absolute';
+        card.style.fontSize = `${cardSize}px`;
+        card.style.color = 'rgba(128, 128, 128, 0.5)'; 
+        card.style.opacity = '0.3'; 
+
+        card.style.left = `${xPos}px`;
+        card.style.top = `${yPos}px`;
+        
+        backgroundDiv.appendChild(card);
+
+        xPos += cardSize; 
+        if (xPos + cardSize > window.innerWidth) {
+            xPos = 0; 
+            yPos += cardSize; 
+        }
+    }
+
+    /* 背景がスクロールに影響されないように、固定配置 */
+    backgroundDiv.style.position = 'fixed';
+    backgroundDiv.style.top = '0';
+    backgroundDiv.style.left = '0';
+    backgroundDiv.style.width = '100%';
+    backgroundDiv.style.height = '100%';
+    backgroundDiv.style.zIndex = '-1'; 
+}
