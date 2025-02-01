@@ -8,9 +8,9 @@
 
 /* グローバル変数の定義 */
 window.suits = ['♥', '♦', '♣', '♠']; /* スート（マーク）の定義 */
-window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
+// window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
 
-// window.ranks = ['A', '7', 'K']; /* 数字の定義 */
+window.ranks = ['2', '7']; /* 数字の定義 */
 
 /*別のJSファイルで呼び出すためグローバル変数にする */
 window.Card = class {
@@ -137,6 +137,8 @@ function dealInitialCards () {
 let zIndexCounter = 1;
 
 function playCard() {
+    if (!isPlayerTurn) return; // プレイヤーのターンでない場合は無視
+
     const selectedCard = document.querySelector('.selected-card');
     
     if (!selectedCard) {

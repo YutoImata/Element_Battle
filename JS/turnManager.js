@@ -5,6 +5,7 @@
  */
 
 let currentPlayer = 'player'; /* 現在のプレイヤーを追跡する変数 */
+let isPlayerTurn;
  
 function startTurn() {
     if (currentPlayer === 'player') {
@@ -16,6 +17,8 @@ function startTurn() {
 
  /* プレイヤーのターン */
  function playerTurn() {
+    isPlayerTurn = true;
+
     console.log('自分のターンが開始');
     document.getElementById('draw-card').disabled = false; 
     document.getElementById('play-card').disabled = true; /* まずはカードを引くことしかできないようにする */
@@ -24,7 +27,8 @@ function startTurn() {
 
  /* 相手のターン */
 function opponentTurn() {
-    if (!isSelectingJoker) {
+    console.log(isPlayerTurn)
+    if (!isSelectingJoker && !isPlayerTurn) {
         console.log('相手のターンが開始');
         /* ここでプレイヤーの追跡の変数をどちらもリセットする */
         playerDrawnCard = false;

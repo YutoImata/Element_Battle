@@ -40,7 +40,12 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
             applyCardEffect(card, true);
             updateElementPointsDisplay(); /* エレメントポイントを更新 */
             checkForWin(); /* 勝利しているかをチェック */
-            endTurn();
+            isPlayerTurn = false; 
+            setTimeout(() => {
+                if (!isPlayerTurn) {
+                    endTurn();
+                }
+            }, 500); 
         }
     });
     

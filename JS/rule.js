@@ -16,6 +16,7 @@ function applyCardEffect(card, isPlayer) {
     // console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
 
     twinSuit(card, isPlayer);
+    twinRank(card, isPlayer);
     applySpecialCardRules(card, isPlayer);
 
     if (specialCard) {
@@ -26,41 +27,41 @@ function applyCardEffect(card, isPlayer) {
         if (isPlayer) {
             playerElementPoints += 2;
             showScoreEffect(+2, isPlayer)
-            console.log('自分が♥で+2されてる');
+            // console.log('自分が♥で+2されてる');
         } else {
             opponentElementPoints += 2;
             showScoreEffect(+2, isPlayer)  // 相手の得点エフェクト
-            console.log('相手が♥で+2されてる');
+            // console.log('相手が♥で+2されてる');
         }
     } else if (card.suit === '♦') {
         if (isPlayer) {
             playerElementPoints += 1;
             showScoreEffect(+1, isPlayer);
-            console.log('自分が♦で+1されてる');
+            // console.log('自分が♦で+1されてる');
         } else {
             opponentElementPoints += 1;
             showScoreEffect(+1, isPlayer)  // 相手の得点エフェクト
-            console.log('相手が♦で+1されてる');
+            // console.log('相手が♦で+1されてる');
         }
     } else if (card.suit === '♣') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 1);
             showScoreEffect(-1, !isPlayer);  // 相手の得点エフェクト
-            console.log('相手が♣で-1されてる');
+            // console.log('相手が♣で-1されてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 1);
             showScoreEffect(-1, !isPlayer);  // 自分の得点エフェクト
-            console.log('自分が♣で-1されてる');
+            // console.log('自分が♣で-1されてる');
         }
     } else if (card.suit === '♠') {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 2);
             showScoreEffect(-2, !isPlayer);  // 相手の得点エフェクト
-            console.log('相手が♠で-2されてる');
+            // console.log('相手が♠で-2されてる');
         } else {
             playerElementPoints = Math.max(0, playerElementPoints - 2);
             showScoreEffect(-2, !isPlayer);  // 自分の得点エフェクト
-            console.log('自分♠で-1されてる');
+            // console.log('自分♠で-1されてる');
         }
     } else if (card.suit === 'J' && card.rank === 'oker') { /* console.logで確認したらこのように区別されていた */
         if (isPlayer) {
