@@ -100,3 +100,8 @@ function generateCardsBackground() {
     backgroundDiv.style.height = '100%';
     backgroundDiv.style.zIndex = '-1'; 
 }
+
+/* タイトル画面からゲーム画面の移動 */
+document.getElementById('gama-page-button').addEventListener('click', function () {
+    window.location.href = 'HTML/game.html';
+});
