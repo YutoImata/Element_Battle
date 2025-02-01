@@ -118,9 +118,14 @@
                     playerTurn();
                     console.log('プレイヤーがもう一回ターン');
                 } else {
+                    isPlayerTurn = false;
+                    console.log(isPlayer);
                     console.log('相手が2連続で同じ数字出した');
                     opponentTurn();
                     console.log('相手がもう一回ターン');
+                    isPlayerTurn = true;
+
+        
                 }
 
                 if (isPlayer) {
