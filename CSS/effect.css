@@ -15,7 +15,6 @@
     pointer-events: none;
     
     /* border: 1px solid red;  */
-
 }
 
 /* 1つ1つのパーティクル */
@@ -23,7 +22,36 @@
     position: absolute;
     width: 6px;
     height: 6px;
-    background-color: gold;
+    background-color: gold;  /* 初期色は金色 */
+    border-radius: 50%;
+    opacity: 1;
+    animation: particleFade 1s ease-out forwards;
+}
+
+/* パーティクルの消滅 */
+@keyframes particleFade {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+/* 本来であれば以下のようなやり方はよくない、汚いです */
+.particle-container2 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    
+    /* border: 1px solid red;  */
+}
+
+.particle2 {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background-color: blue;  /* 初期色は金色 */
     border-radius: 50%;
     opacity: 1;
     animation: particleFade 1s ease-out forwards;

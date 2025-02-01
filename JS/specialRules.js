@@ -91,7 +91,6 @@
 
     /* 同じ数字を2回連続出した際の処理 */
     function twinRank(card, isPlayer) {
-        console.log('通過1:',isPlayerTurn);
         let previousRank;
         if (isPlayer) {
             previousRank = playerPreviousRank;
@@ -111,18 +110,17 @@
 
         /* 同じ数字が２回連続で出た場合の処理 */
         if (card.rank === previousRank) {
-            console.log('ここは呼ばれる？');
             isPlayerTurn = true;
-            showParticleEffect(isPlayer);
+            showParticleEffectRank(isPlayer);
             setTimeout(() => {
                 if (isPlayer) {
                     console.log('自分が2連続で同じ数字出した');
                     playerTurn();
-                    console.log('プレイヤーがもう一回カードを出す');
+                    console.log('プレイヤーがもう一回ターン');
                 } else {
                     console.log('相手が2連続で同じ数字出した');
                     opponentTurn();
-                    console.log('相手がもう一回カードを出す');
+                    console.log('相手がもう一回ターン');
                 }
 
                 if (isPlayer) {
@@ -141,4 +139,25 @@
                 opponentPreviousRank = card.rank;
             }
         }
+    }
+
+    function showParticleEffectRank(isPlayer) {
+
+        let targetArea = document.getElementById('played-cards');
+        let particleContainer = document.createElement("div");
+        particleContainer.classList.add("particle-container2");
+
+        for (let i = 0; i < 10; i++) {
+            let particle2 = document.createElement("div");
+            particle2.classList.add("particle2");
+            particle2.style.left = `${Math.random() * 100}%`;
+            particle2.style.top = `${Math.random() * 100}%`;
+            particleContainer.appendChild(particle2);
+        }
+
+        targetArea.appendChild(particleContainer);
+
+        setTimeout(() => {
+            particleContainer.remove();
+        }, 1000);
     }
