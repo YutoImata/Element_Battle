@@ -17,8 +17,6 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
     /* カードを引くボタンを押したらカードを引く */
     document.getElementById('draw-card').addEventListener('click', () => {
         drawCardFunction(); /* カードを引く際の処理をすべて書いた関数 */
-
-
     });
 
     /* カードを出すボタンを押したとき */

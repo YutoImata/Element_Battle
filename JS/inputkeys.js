@@ -4,6 +4,18 @@
  * 
  */
 
+// /* キー入力でカードを引く（出す）処理 */
+// document.addEventListener('keydown', (cardEvent) => {
+//     if (cardEvent.key === 'D' || cardEvent.key === 'd') {
+//         drawCardFunction();
+//     }
+//     if (cardEvent.key === 'P' || cardEvent.key === 'p') {
+//         playCardFunction();
+//     }
+// });
+// どのカードをプレイヤーが出すのかを結局選択しなければならないためこれはやめた
+
+/* ヘルプボタンを押した際や、「H」キーが押された際の処理 */
 document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('overlay');
     const helpButton = document.getElementById('help-button'); /* ボタンを取得 */
