@@ -57,9 +57,7 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
         }
     }
 
-
     
-
 /* ページが読み込まれたときに呼び出す関数を入れる(1度だけ呼び出せれば大丈夫なのを入れる) */
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('start-button').addEventListener('click', () => {

@@ -8,11 +8,37 @@
 
 /* グローバル変数の定義 */
 window.suits = ['♥', '♦', '♣', '♠']; /* スート（マーク）の定義 */
-// window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
+window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
 
-window.ranks = ['2']; /* 数字の定義 */
+// // チェックボックスの状態に基づいてranksを更新する関数
+// function updateRanks() {
+//     var checkboxes = document.querySelectorAll('.checkbox'); // すべてのcheckboxを取得
 
-/*別のJSファイルで呼び出すためグローバル変数にする */
+//     // すべてのチェックボックスに対して処理
+//     checkboxes.forEach(function(checkbox) {
+//         var value = checkbox.value;  // チェックボックスの値（A, 2, 3 など）
+        
+//         if (checkbox.checked) {
+//             // チェックされていればranksに追加
+//             if (!window.ranks.includes(value)) {
+//                 window.ranks.push(value);
+//             }
+//         } else {
+//             // チェックされていなければranksから削除
+//             var index = window.ranks.indexOf(value);
+//             if (index > -1) {
+//                 window.ranks.splice(index, 1);
+//             }
+//         }
+//     });
+
+//     // 変更後のranksを表示
+//     console.log(window.ranks);
+// }
+
+
+
+/* 別のJSファイルで呼び出すためグローバル変数にする */
 window.Card = class {
     constructor(suit, rank) {
         this.suit = suit;
@@ -23,11 +49,35 @@ window.Card = class {
     toString() {
         if (this.suit === 'Joker') {
             return 'Joker';
-
         }
         return `${this.suit}${this.rank}`;
     }
 };
+
+
+
+/* カスタマイズしたカードを反映させる */
+// function cardCustomization() {
+//     const selectedRanks = [];
+
+//     // ランクの選択を取得
+//     document.querySelectorAll('input[name="card"]:checked').forEach(checkbox => {
+//         selectedRanks.push(checkbox.value);
+//     });
+
+//     console.log(selectedRanks); // ここでチェックされた値を確認
+
+//     // 何も選ばれなかった場合はデフォルト設定（すべてのランクを使用）
+//     if (selectedRanks.length === 0) {
+//         selectedRanks.push(...window.ranks); // すべてのランクを設定
+//     }
+
+//     // 選択したランクを設定
+//     window.ranks = selectedRanks;
+
+//     console.log("使用するカード:", window.ranks);
+// }
+
 
 window.Deck = class {
     constructor() {
@@ -45,8 +95,8 @@ window.Deck = class {
         }
 
         /* Jokerを追加 */
-        // this.cards.push(new Card('Joker', ''));
-        // this.cards.push(new Card('Joker', ''));
+        this.cards.push(new Card('Joker', ''));
+        this.cards.push(new Card('Joker', ''));
     }
 
     /* カードを混ぜる処理 */

@@ -6,12 +6,11 @@
 
 /* HTMLページを起動した際に行う処理 */
 window.addEventListener("load", function() {
-    /* 背景をトランプ柄にする関数の呼び出し */
-    generateCardsBackground();
-    gameTitle();
-    goldParticle();
-    blueParticle();
-
+    generateCardsBackground(); /* 背景をトランプ柄にする関数の呼び出し */
+    gameTitle(); /* ゲームタイトルのアニメーション */
+    goldParticle(); /* 金のパーティクル */
+    blueParticle(); /* 青のパーティクル */
+    toggleCheckboxContainer(); /* カスタマイズの矢印を押したら向きが変わる　*/
 });
 
 /* ゲームタイトルのアニメーション */
@@ -217,6 +216,30 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 });
+
+/* カスタマイズの矢印を押したら向きが変わる　*/
+function toggleCheckboxContainer() {
+    document.getElementById("toggle-container").addEventListener("click", function() {
+        const checkboxContainer = document.getElementById("checkbox-container");
+        const arrow = document.getElementById("toggle-arrow");
+        
+        if (checkboxContainer.classList.contains("hidden")) {
+            checkboxContainer.classList.remove("hidden");
+            arrow.textContent = "▼"; // 矢印を下向きに変更
+        } else {
+            checkboxContainer.classList.add("hidden");
+            arrow.textContent = "▶"; // 矢印を右向きに変更
+        }
+    });
+}
+
+// この関数はチェックボックスの状態が変わったときに呼び出されるように設定します
+document.querySelectorAll('.checkbox').forEach(function(checkbox) {
+    checkbox.addEventListener('change', updateRanks);
+});
+
+
+
 
 
 
