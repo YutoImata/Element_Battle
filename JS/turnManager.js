@@ -27,7 +27,7 @@ function startTurn() {
 
  /* 相手のターン */
 function opponentTurn() {
-    console.log(isPlayerTurn);
+    console.log('自分のターン：', isPlayerTurn);
     if (!isSelectingJoker && !isPlayerTurn) {
         console.log('相手のターンが開始');
         /* ここでプレイヤーの追跡の変数をどちらもリセットする */
