@@ -4,10 +4,11 @@
  * 
  */
 
-//* Hキーを押したらヘルプ画面 */
-document.addEventListener('keydown', function(event) {
+document.addEventListener('DOMContentLoaded', function() {
     const overlay = document.getElementById('overlay');
-    if (event.key === 'H' || event.key === 'h') {
+    const helpButton = document.getElementById('help-button'); /* ボタンを取得 */
+
+    function toggleOverlay() {
         if (overlay.classList.contains('show')) {
             overlay.classList.remove('show'); /* 画像を非表示にする */
         } else {
@@ -18,7 +19,17 @@ document.addEventListener('keydown', function(event) {
                 overlay.style.opacity = 1; 
             }, 100); // 0.1秒後にトランジションを適用
         }
-    } else if (event.key === 'Escape') {
-        overlay.classList.remove('show'); /* 画像を非表示にする */
     }
+
+    /* Hキーで表示・非表示 */
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'H' || event.key === 'h') {
+            toggleOverlay();
+        } else if (event.key === 'Escape') {
+            overlay.classList.remove('show'); /* 画像を非表示にする */
+        }
+    });
+
+    /*  ボタンをクリックで表示・非表示 */
+    helpButton.addEventListener('click', toggleOverlay);
 });
