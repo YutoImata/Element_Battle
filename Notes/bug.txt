@@ -13,3 +13,6 @@ console.log();
 
 ③twinRankを敵が発動した際に無限に敵のターンになった
 →フラグを適切なところに設置して解消
+
+④TwinRankをJSに反映できなかった
+→specialRules.jsを適切に書いたらできた
