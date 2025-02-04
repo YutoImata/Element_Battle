@@ -145,6 +145,13 @@ h1 {
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 文字に影をつけて立体感を出す */
 }
 
+#twinRank {
+    font-family: 'Lobster', cursive;
+    font-size: 36px;  /* フォントサイズを調整 */
+    color: blue;  /* おしゃれな金色 */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3); /* 文字に影をつけて立体感を出す */
+}
+
 
 /* ページ下部のレイアウト */
 
