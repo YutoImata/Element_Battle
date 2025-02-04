@@ -16,8 +16,19 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
 /* update関数は、イベントリスナーを設定するために使用される */
     /* カードを引くボタンを押したらカードを引く */
     document.getElementById('draw-card').addEventListener('click', () => {
+        drawCardFunction(); /* カードを引く際の処理をすべて書いた関数 */
+
+
+    });
+
+    /* カードを出すボタンを押したとき */
+    document.getElementById('play-card').addEventListener('click', () => {
+        playCardFunction(); /* カードを出す際の処理をすべて書いた関数 */
+    });
+
+    /* カードを引く際の処理をすべて書いた関数 */
+    function drawCardFunction() {
         const drawCard = deck.draw();
-        // playerTurn();　/* いったんコメントアウトしてエラーが出たら要検討（多分要らん) */
 
         addCardToPlayerHand(drawCard)
             playerDrawnCard = true;
@@ -26,11 +37,10 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
             document.getElementById('draw-card').disabled = true; /* 次にカードを引けないようにする */
             document.getElementById('play-card').disabled = false; /* そしてカードを出せるようにする */
             // console.log('カードを出せるようになっているはず');
+    }
 
-    });
-
-    /* カードを出すボタンを押したとき */
-    document.getElementById('play-card').addEventListener('click', () => {
+    /* カードを出す際の処理をすべて書いた関数 */
+    function playCardFunction() {
         playCard();
         playerPlayedCard = true;
 
@@ -47,7 +57,9 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
                 }
             }, 500); 
         }
-    });
+    }
+
+
     
 
 /* ページが読み込まれたときに呼び出す関数を入れる(1度だけ呼び出せれば大丈夫なのを入れる) */
