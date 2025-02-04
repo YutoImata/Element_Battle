@@ -1,6 +1,6 @@
 /*
  *
- * backgroun.js
+ * background.js
  * 
  */
 
