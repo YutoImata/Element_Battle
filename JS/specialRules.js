@@ -111,7 +111,7 @@
         /* 同じ数字が２回連続で出た場合の処理 */
         if (card.rank === previousRank) {
             isPlayerTurn = true;
-            showParticleEffectRank(isPlayer);
+            showBlueParticleEffectRank(isPlayer);
             setTimeout(() => {
                 if (isPlayer) {
                     console.log('自分が2連続で同じ数字出した');
@@ -146,23 +146,23 @@
         }
     }
 
-    function showParticleEffectRank(isPlayer) {
+    function showBlueParticleEffectRank(isPlayer) {
 
         let targetArea = document.getElementById('played-cards');
-        let particleContainer = document.createElement("div");
-        particleContainer.classList.add("particle-container2");
+        let blueParticleContainer = document.createElement("div");
+        blueParticleContainer.classList.add("blue-particle-container");
 
         for (let i = 0; i < 10; i++) {
-            let particle2 = document.createElement("div");
-            particle2.classList.add("particle2");
-            particle2.style.left = `${Math.random() * 100}%`;
-            particle2.style.top = `${Math.random() * 100}%`;
-            particleContainer.appendChild(particle2);
+            let blueParticle = document.createElement("div");
+            blueParticle.classList.add("blue-particle");
+            blueParticle.style.left = `${Math.random() * 100}%`;
+            blueParticle.style.top = `${Math.random() * 100}%`;
+            blueParticleContainer.appendChild(blueParticle);
         }
 
-        targetArea.appendChild(particleContainer);
+        targetArea.appendChild(blueParticleContainer);
 
         setTimeout(() => {
-            particleContainer.remove();
+            blueParticleContainer.remove();
         }, 1000);
     }
