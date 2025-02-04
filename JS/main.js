@@ -16,12 +16,12 @@ let playerPlayedCard = false /* プレイヤーがカードを出したかどう
 /* update関数は、イベントリスナーを設定するために使用される */
     /* カードを引くボタンを押したらカードを引く */
     document.getElementById('draw-card').addEventListener('click', () => {
-        drawCardFunction(); /* カードを引く際の処理をすべて書いた関数 */
+        drawCardFunction(); /* カードを引く際の処理をすべて書いた関数を呼び出す */
     });
 
     /* カードを出すボタンを押したとき */
     document.getElementById('play-card').addEventListener('click', () => {
-        playCardFunction(); /* カードを出す際の処理をすべて書いた関数 */
+        playCardFunction(); /* カードを出す際の処理をすべて書いた関数呼び出す */
     });
 
     /* カードを引く際の処理をすべて書いた関数 */
