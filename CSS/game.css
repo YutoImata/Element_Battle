@@ -202,6 +202,10 @@ main {
 
 
 /* ボタンのレイアウト */
+#actions button {
+    margin-right: 10px; /* ボタン間に10pxのスペースを追加 */
+}
+
 button {
     background-color: #4CAF50;
     color: white;

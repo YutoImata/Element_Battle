@@ -8,10 +8,49 @@
 window.addEventListener("load", function() {
     /* 背景をトランプ柄にする関数の呼び出し */
     generateCardsBackground();
+    gameTitle();
     goldParticle();
     blueParticle();
 
 });
+
+/* ゲームタイトルのアニメーション */
+function gameTitle() {
+    const title = document.getElementById("game-title");
+    const text = title.innerText;
+    title.innerHTML = ''; /* 既存のテキストを消す */
+
+    /* 文字をspanで囲む */
+    for (let char of text) {
+        const span = document.createElement('span');
+        span.innerText = char;
+        title.appendChild(span);
+    }
+
+    const spans = title.querySelectorAll('span');
+    let currentIndex = 0;
+
+    function animateText() {
+        /* すべての文字を元のサイズに戻す */
+        spans.forEach(span => {
+            span.style.transform = 'scale(1)';
+        });
+
+        /* 現在の文字を拡大 */
+        spans[currentIndex].style.transform = 'scale(1.5)';
+
+        /* 次の文字に行く */
+        currentIndex++;
+
+        if (currentIndex >= spans.length) {
+            currentIndex = 0; /* 最後に到達したら最初に戻る */
+        }
+    }
+
+    /* 文字を1秒ごとにアニメーション */
+    setInterval(animateText, 500);
+}
+
 
 /* 金色のパーティクル */
 function goldParticle() {
