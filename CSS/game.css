@@ -274,7 +274,23 @@ button:hover {
     z-index: 100;
 }
 
-/* 「ヘルプ：H」のレイアウト */
+
+#overlay img {
+    max-width: 80%;    max-height: 80%;
+    opacity: 0; /* 初期状態を透明に設定 */
+    transition: opacity 1s ease-in-out;
+    border: 5px solid #000;
+    border-radius: 5px;   
+}
+
+#overlay.show {
+    display: flex;
+}
+
+#overlay.show img {
+    opacity: 1; /* 透明度 */
+}
+
 /* ヘルプボタンのスタイル */
 #help-button {
     position: fixed;
@@ -296,19 +312,3 @@ button:hover {
     transform: scale(1.2);
 }
 
-
-#overlay img {
-    max-width: 80%;    max-height: 80%;
-    opacity: 0; /* 初期状態を透明に設定 */
-    transition: opacity 1s ease-in-out;
-    border: 5px solid #000;
-    border-radius: 5px;   
-}
-
-#overlay.show {
-    display: flex;
-}
-
-#overlay.show img {
-    opacity: 1; /* 透明度 */
-}
