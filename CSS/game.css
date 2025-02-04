@@ -292,9 +292,9 @@ button:hover {
 }
 
 /* ヘルプボタンのスタイル */
-#help-button {
+#help-button, #home-button, #restart-button {
     position: fixed;
-    top: 20px;
+    top: 70px;
     left: 20px;
     background-color: #007bff;
     color: white;
@@ -307,7 +307,19 @@ button:hover {
     z-index: 200;
 }
 
-#help-button:hover {
+#home-button {
+    position: fixed;
+    top: 20px; /* 上書きしてる */
+    left: 20px;
+}
+
+#restart-button {
+    position: fixed;
+    top: 120px; /* 上書きしてる */
+    left: 20px;
+}
+
+#help-button:hover, #home-button:hover, #restart-button:hover {
     background-color: #0056b3;
     transform: scale(1.2);
 }
