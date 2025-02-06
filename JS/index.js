@@ -10,7 +10,7 @@ window.addEventListener("load", function() {
     gameTitle(); /* ゲームタイトルのアニメーション */
     goldParticle(); /* 金のパーティクル */
     blueParticle(); /* 青のパーティクル */
-    toggleCheckboxContainer(); /* カスタマイズの矢印を押したら向きが変わる　*/
+    // toggleCheckboxContainer(); /* カスタマイズの矢印を押したら向きが変わる　*/
 });
 
 /* ゲームタイトルのアニメーション */
@@ -217,30 +217,52 @@ document.addEventListener('DOMContentLoaded', function() {
 
 });
 
-/* カスタマイズの矢印を押したら向きが変わる　*/
-function toggleCheckboxContainer() {
-    document.getElementById("toggle-container").addEventListener("click", function() {
-        const checkboxContainer = document.getElementById("checkbox-container");
-        const arrow = document.getElementById("toggle-arrow");
+// /* カスタマイズの矢印を押したら向きが変わる　*/
+// function toggleCheckboxContainer() {
+//     document.getElementById("toggle-container").addEventListener("click", function() {
+//         const checkboxContainer = document.getElementById("checkbox-container");
+//         const arrow = document.getElementById("toggle-arrow");
         
-        if (checkboxContainer.classList.contains("hidden")) {
-            checkboxContainer.classList.remove("hidden");
-            arrow.textContent = "▼"; // 矢印を下向きに変更
-        } else {
-            checkboxContainer.classList.add("hidden");
-            arrow.textContent = "▶"; // 矢印を右向きに変更
-        }
-    });
-}
+//         if (checkboxContainer.classList.contains("hidden")) {
+//             checkboxContainer.classList.remove("hidden");
+//             arrow.textContent = "▼"; // 矢印を下向きに変更
+//         } else {
+//             checkboxContainer.classList.add("hidden");
+//             arrow.textContent = "▶"; // 矢印を右向きに変更
+//         }
+//     });
+// }
 
-// この関数はチェックボックスの状態が変わったときに呼び出されるように設定します
-document.querySelectorAll('.checkbox').forEach(function(checkbox) {
-    checkbox.addEventListener('change', updateRanks);
-});
+// // この関数はチェックボックスの状態が変わったときに呼び出されるように設定します
+// document.querySelectorAll('.checkbox').forEach(function(checkbox) {
+//     checkbox.addEventListener('change', updateRanks);
+// });
 
+// // チェックボックスの状態に基づいてranksを更新する関数
+// function updateRanks() {
+//     var checkboxes = document.querySelectorAll('.checkbox'); // すべてのcheckboxを取得
 
+//     // すべてのチェックボックスに対して処理
+//     checkboxes.forEach(function(checkbox) {
+//         var value = checkbox.value;  // チェックボックスの値（A, 2, 3 など）
+        
+//         if (checkbox.checked) {
+//             // チェックされていればranksに追加
+//             if (!window.ranks.includes(value)) {
+//                 window.ranks.push(value);
+//             }
+//         } else {
+//             // チェックされていなければranksから削除
+//             var index = window.ranks.indexOf(value);
+//             if (index > -1) {
+//                 window.ranks.splice(index, 1);
+//             }
+//         }
+//     });
 
-
+//     // 変更後のranksを表示
+//     console.log(window.ranks);
+// }
 
 
 /* タイトル画面からゲーム画面の移動 */
