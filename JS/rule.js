@@ -13,7 +13,7 @@ let isSelectingJoker = false;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
-    // console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
+    console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
 
     twinSuit(card, isPlayer);
     twinRank(card, isPlayer);
@@ -100,16 +100,16 @@ function showScoreEffect(scoreChange, isPlayer) {
         scoreElement.style.left = `${window.innerWidth * 0.7 - scoreElement.offsetWidth / 2}px`;  /* 相手は80%位置 */
     }
 
-    /* 0.5秒後にフェードアウトを開始 */
+    /* 1.0秒後にフェードアウトを開始 */
     setTimeout(() => {
         scoreElement.style.opacity = 0; 
-    }, 500);
+    }, 1000);
 
-    /* 1.5秒後に得点を非表示にして削除 */
+    /* 2.0秒後に得点を非表示にして削除 */
     setTimeout(() => {
         scoreElement.style.display = 'none';
         scoreElement.style.opacity = 1; /* 次回表示のために元の不透明度に戻す */
-    }, 1500);
+    }, 2000);
 }
 
 /* Jokerを出した際に選択肢を画面上に出す */

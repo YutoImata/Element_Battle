@@ -8,34 +8,10 @@
 
 /* グローバル変数の定義 */
 window.suits = ['♥', '♦', '♣', '♠']; /* スート（マーク）の定義 */
-window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
+// window.ranks = ['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']; /* 数字の定義 */
 
-// // チェックボックスの状態に基づいてranksを更新する関数
-// function updateRanks() {
-//     var checkboxes = document.querySelectorAll('.checkbox'); // すべてのcheckboxを取得
 
-//     // すべてのチェックボックスに対して処理
-//     checkboxes.forEach(function(checkbox) {
-//         var value = checkbox.value;  // チェックボックスの値（A, 2, 3 など）
-        
-//         if (checkbox.checked) {
-//             // チェックされていればranksに追加
-//             if (!window.ranks.includes(value)) {
-//                 window.ranks.push(value);
-//             }
-//         } else {
-//             // チェックされていなければranksから削除
-//             var index = window.ranks.indexOf(value);
-//             if (index > -1) {
-//                 window.ranks.splice(index, 1);
-//             }
-//         }
-//     });
-
-//     // 変更後のranksを表示
-//     console.log(window.ranks);
-// }
-
+window.ranks = ['2']; /* 数字の定義 */
 
 
 /* 別のJSファイルで呼び出すためグローバル変数にする */
@@ -53,30 +29,6 @@ window.Card = class {
         return `${this.suit}${this.rank}`;
     }
 };
-
-
-
-/* カスタマイズしたカードを反映させる */
-// function cardCustomization() {
-//     const selectedRanks = [];
-
-//     // ランクの選択を取得
-//     document.querySelectorAll('input[name="card"]:checked').forEach(checkbox => {
-//         selectedRanks.push(checkbox.value);
-//     });
-
-//     console.log(selectedRanks); // ここでチェックされた値を確認
-
-//     // 何も選ばれなかった場合はデフォルト設定（すべてのランクを使用）
-//     if (selectedRanks.length === 0) {
-//         selectedRanks.push(...window.ranks); // すべてのランクを設定
-//     }
-
-//     // 選択したランクを設定
-//     window.ranks = selectedRanks;
-
-//     console.log("使用するカード:", window.ranks);
-// }
 
 
 window.Deck = class {
@@ -221,4 +173,60 @@ function playCard() {
         selectedCard.classList.remove('selected-card'); /* カードの選択状態を解除する => そうすることで連続してポイントを取得できなくなる */
     }, 0);
 }
+
+/* カスタマイズで実装できなかったコード */
+
+/* カスタマイズしたカードを反映させる */
+// function cardCustomization() {
+//     const selectedRanks = [];
+
+//     // ランクの選択を取得
+//     document.querySelectorAll('input[name="card"]:checked').forEach(checkbox => {
+//         selectedRanks.push(checkbox.value);
+//     });
+
+//     console.log(selectedRanks); // ここでチェックされた値を確認
+
+//     // 何も選ばれなかった場合はデフォルト設定（すべてのランクを使用）
+//     if (selectedRanks.length === 0) {
+//         selectedRanks.push(...window.ranks); // すべてのランクを設定
+//     }
+
+//     // 選択したランクを設定
+//     window.ranks = selectedRanks;
+
+//     console.log("使用するカード:", window.ranks);
+// }
+
+
+
+
+// // チェックボックスの状態に基づいてranksを更新する関数
+// function updateRanks() {
+//     var checkboxes = document.querySelectorAll('.checkbox'); // すべてのcheckboxを取得
+
+//     // すべてのチェックボックスに対して処理
+//     checkboxes.forEach(function(checkbox) {
+//         var value = checkbox.value;  // チェックボックスの値（A, 2, 3 など）
+        
+//         if (checkbox.checked) {
+//             // チェックされていればranksに追加
+//             if (!window.ranks.includes(value)) {
+//                 window.ranks.push(value);
+//             }
+//         } else {
+//             // チェックされていなければranksから削除
+//             var index = window.ranks.indexOf(value);
+//             if (index > -1) {
+//                 window.ranks.splice(index, 1);
+//             }
+//         }
+//     });
+
+//     // 変更後のranksを表示
+//     console.log(window.ranks);
+// }
+
+
+
 
