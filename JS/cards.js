@@ -47,8 +47,8 @@ window.Deck = class {
         }
 
         /* Jokerを追加 */
-        this.cards.push(new Card('Joker', ''));
-        this.cards.push(new Card('Joker', ''));
+        // this.cards.push(new Card('Joker', ''));
+        // this.cards.push(new Card('Joker', ''));
     }
 
     /* カードを混ぜる処理 */
