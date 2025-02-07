@@ -17,9 +17,9 @@ function startTurn() {
 
  /* プレイヤーのターン */
  function playerTurn() {
+    console.log('今はどっちのターン？', currentPlayer);
     isPlayerTurn = true;
-
-    console.log('自分のターンが開始');
+    console.log('自分のターンが開始isPlayerTurn:', isPlayerTurn);
     document.getElementById('draw-card').disabled = false; 
     document.getElementById('play-card').disabled = true; /* まずはカードを引くことしかできないようにする */
     specialCard = false; /* 特殊カードのフラグをリセット */
@@ -27,7 +27,7 @@ function startTurn() {
 
  /* 相手のターン */
 function opponentTurn() {
-    console.log('相手のターン：', isPlayerTurn);
+    console.log('相手のターンが開始できるかを確認する', isSelectingJoker, isPlayerTurn);
     if (!isSelectingJoker && !isPlayerTurn) {
         console.log('相手のターンが開始');
         /* ここでプレイヤーの追跡の変数をどちらもリセットする */
@@ -57,13 +57,19 @@ function opponentTurn() {
  function endTurn() {
     updateElementPointsDisplay();
     checkForWin();
+    changePlayer();
+    startTurn();
+ }
+
+ /* プレイヤーを切り替える */
+ function changePlayer() {
     if (currentPlayer === 'player') {
         currentPlayer = 'opponent';
     } else {
         currentPlayer = 'player';
     }
-    startTurn();
  }
+
 
  /* 相手がランダムに手札を出す処理 */
  function selectCardForOpponent() {

@@ -87,13 +87,15 @@ function showParticleEffect(isPlayer) {
     }, 1000);
 }
 
-/* 同じ数字を2回連続出した際の処理 */
+/* 同じ数字を2回連続出したかどうかを判別する処理 */
 function twinRank(card, isPlayer) {
     let previousRank;
     if (isPlayer) {
         previousRank = playerPreviousRank;
     } else {
         previousRank = opponentPreviousRank;
+        document.getElementById('draw-card').disabled = false; /* 次にカードを引けないようにする */
+        document.getElementById('play-card').disabled = true; /* そしてカードを出せるようにする */        
     }
 
     /* Jokerの場合はリセット */
@@ -117,7 +119,6 @@ function twinRank(card, isPlayer) {
                 console.log('プレイヤーがもう一回ターン');
             } else {
                 isPlayerTurn = false;
-                console.log(isPlayer);
                 console.log('相手が2連続で同じ数字出した');
                 opponentTurn();
                 console.log('相手がもう一回ターン');
