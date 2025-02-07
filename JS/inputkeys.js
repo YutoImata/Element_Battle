@@ -57,6 +57,43 @@ function restartPage(event) {
     window.location.reload();
 }
 
+/* Windowsサイズを固定 */
+function lockWindowSize() {
+    window.resizeTo(fixedWidth, fixedHeight);
+}
+
+window.onload = () => {
+    lockWindowSize();
+};
+
+window.onresize = () => {
+    lockWindowSize();
+};
+
+/* キーボードショートカットの無効化 */
+document.addEventListener("keydown", function (event) {
+    if (
+        event.key === "F12" || /* デベロッパーツール */
+        (event.ctrlKey && event.key === "+") || /* ズームイン */
+        (event.ctrlKey && event.key === "-") || /*  ズームアウト */
+        (event.ctrlKey && event.key === "0") ||  /* ズームリセット */
+        (event.ctrlKey && event.key === "u") || /*  ページソースの表示 (Ctrl + U) */
+        (event.ctrlKey && event.shiftKey && event.key === "I") || /*  デベロッパーツール (Ctrl + Shift + I) */
+        (event.ctrlKey && event.shiftKey && event.key === "J") /*  デベロッパーツール (Ctrl + Shift + J) */
+    ) {
+        event.preventDefault();
+        event.stopPropagation();
+        return false;
+    }
+});
+
+/*  右クリックメニューの無効化 */
+document.addEventListener("contextmenu", function (event) {
+    event.preventDefault();
+    return false;
+});
+
+
 
 
 
