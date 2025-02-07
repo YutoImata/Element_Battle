@@ -70,8 +70,10 @@ function applyCardEffect(card, isPlayer) {
         } else {
             if (playerElementPoints >= 10) {
                 playerElementPoints -= 5; /* これは絶対に負の数に行かないからこれでいい */
+                showScoreEffect(-5, !isPlayer);  // 自分の得点エフェクト
             } else {
                 opponentElementPoints += 5;
+                showScoreEffect(+5, isPlayer);  // 自分の得点エフェクト
             }
         }
     }
@@ -127,6 +129,7 @@ function showJokerOptions(isPlayer) {
     document.getElementById('increase-points').onclick = () => {
         if (isPlayer) {
             playerElementPoints += 5;
+            showScoreEffect(+5, isPlayer);  // 自分の得点エフェクト
         }
         hideJokerOptions();
         updateElementPointsDisplay(); /* エレメントポイントを更新 */
@@ -139,6 +142,7 @@ function showJokerOptions(isPlayer) {
     document.getElementById('decrease-points').onclick = () => {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 5);
+            showScoreEffect(-5, !isPlayer);  // 自分の得点エフェクト
         }
         hideJokerOptions();
         updateElementPointsDisplay(); /* エレメントポイントを更新 */
@@ -147,6 +151,7 @@ function showJokerOptions(isPlayer) {
         // console.log('敵：', opponentElementPoints);
         checkForWin(); /* 勝利しているかをチェック */
     };
+    isPlayerTurn = true;
 }
 
 /* 選択肢を非表示にする関数 */

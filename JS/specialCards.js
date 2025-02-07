@@ -11,16 +11,23 @@ let specialCard = false;
 function applySpecialCardRules(card, isPlayer) {
     if (card.suit === '♠' && card.rank === 'A') {
         /* 自分と敵のポイントを入れ替える */
+
         const tempOpponentElementPoints = opponentElementPoints;
         opponentElementPoints = playerElementPoints;
         playerElementPoints = tempOpponentElementPoints;
+
+        // showScoreEffect(playerElementPoints > opponentElementPoints ? playerElementPoints - opponentElementPoints : (opponentElementPoints - playerElementPoints) * -1, isPlayer);
+        // showScoreEffect(playerElementPoints > opponentElementPoints ? playerElementPoints - opponentElementPoints : (opponentElementPoints - playerElementPoints) * -1, isPlayer);
+        
         specialCard = true; /* フラグをtrueにする */
 
     } else if (card.suit === '♥' && card.rank === '7') {
         /* 得点が2倍になる */
         if (isPlayer) {
+            showScoreEffect(playerElementPoints * 2, isPlayer);
             playerElementPoints *= 3;
         } else {
+            showScoreEffect(opponentElementPoints * 2, isPlayer);
             opponentElementPoints *= 3;
         }
         specialCard = true; /* フラグをtrueにする */
@@ -28,8 +35,10 @@ function applySpecialCardRules(card, isPlayer) {
     } else if (card.suit === '♦' && card.rank === '7') {
         /* 得点が2倍になる */
         if (isPlayer) {
+            showScoreEffect(playerElementPoints, isPlayer);
             playerElementPoints *= 2;
         } else {
+            showScoreEffect(opponentElementPoints, isPlayer);
             opponentElementPoints *= 2;
         }
         specialCard = true; /* フラグをtrueにする */
@@ -52,7 +61,7 @@ function applySpecialCardRules(card, isPlayer) {
             showScoreEffect(+3, isPlayer);
         }else {
             opponentElementPoints += 3;
-            showScoreEffect(+3, !isPlayer);
+            showScoreEffect(+3, isPlayer);
         }
         specialCard = true;
     }

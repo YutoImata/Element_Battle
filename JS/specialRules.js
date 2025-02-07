@@ -29,6 +29,7 @@ function twinSuit(card, isPlayer) {
     /* Jokerの場合はリセット */
     if (card.suit === 'J' && card.rank === 'oker') {
         if (isPlayer) {
+            console.log('Jokerリセットできてる');
             playerPreviousSuit = null;
         } else {
             opponentPreviousSuit = null;
