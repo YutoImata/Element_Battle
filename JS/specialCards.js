@@ -47,11 +47,11 @@ function applySpecialCardRules(card, isPlayer) {
         if (isPlayer) {
             opponentElementPoints = Math.max(0, opponentElementPoints - 3);
             showScoreEffect(-3, !isPlayer);
-            console.log('特殊カードでマイナスされている');
+            // console.log('特殊カードでマイナスされている');
         }else {
             playerElementPoints = Math.max(0, playerElementPoints - 3);
             showScoreEffect(-3, !isPlayer);
-            console.log('特殊カードでマイナスされている');
+            // console.log('特殊カードでマイナスされている');
         }
         specialCard = true;
 

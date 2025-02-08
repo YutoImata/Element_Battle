@@ -13,7 +13,7 @@ let isSelectingJoker = false;
 
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
-    console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
+    // console.log('現在のカード:', card); /* 出したカードのsuitとrankが出力される */
 
     twinSuit(card, isPlayer);
     twinRank(card, isPlayer);

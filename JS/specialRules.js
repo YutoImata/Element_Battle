@@ -29,7 +29,7 @@ function twinSuit(card, isPlayer) {
     /* Jokerの場合はリセット */
     if (card.suit === 'J' && card.rank === 'oker') {
         if (isPlayer) {
-            console.log('Jokerリセットできてる');
+            // console.log('Jokerリセットできてる');
             playerPreviousSuit = null;
         } else {
             opponentPreviousSuit = null;
@@ -44,18 +44,18 @@ function twinSuit(card, isPlayer) {
             let newCard = deck.draw();
             if (isPlayer) {
                 addCardToPlayerHand(newCard);
-                console.log('プレイヤーがもう１枚引く');
+                // console.log('プレイヤーがもう１枚引く');
             } else {
                 addCardToOpponentHand(newCard);
-                console.log('相手がもう１枚引く');
+                // console.log('相手がもう１枚引く');
             }
 
             if (isPlayer) {
                 playerPreviousSuit = null;
-                console.log('自分のスートカウントをリセット');
+                // console.log('自分のスートカウントをリセット');
             } else {
                 opponentPreviousSuit = null;
-                console.log('相手のスートカウントをリセット');
+                // console.log('相手のスートカウントをリセット');
             }
 
         }, 500)
@@ -115,23 +115,23 @@ function twinRank(card, isPlayer) {
         showBlueParticleEffectRank(isPlayer);
         setTimeout(() => {
             if (isPlayer) {
-                console.log('自分が2連続で同じ数字出した');
+                // console.log('自分が2連続で同じ数字出した');
                 playerTurn();
-                console.log('プレイヤーがもう一回ターン');
+                // console.log('プレイヤーがもう一回ターン');
             } else {
                 isPlayerTurn = false;
-                console.log('相手が2連続で同じ数字出した');
+                // console.log('相手が2連続で同じ数字出した');
                 opponentTurn();
-                console.log('相手がもう一回ターン');
+                // console.log('相手がもう一回ターン');
                 isPlayerTurn = true;
             }
 
             if (isPlayer) {
                 playerPreviousRank = null;
-                console.log('自分の数字カウントをリセット');
+                // console.log('自分の数字カウントをリセット');
             } else {
                 opponentPreviousRank = null;
-                console.log('相手の数字カウントをリセット');
+                // console.log('相手の数字カウントをリセット');
             }
 
         }, 500)

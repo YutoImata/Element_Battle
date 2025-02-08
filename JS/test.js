@@ -11,8 +11,8 @@ function blueParticle() {
     const correctedTop = twinRankRect.top + scrollOffset; /* スクロール位置を加算 */
 
     /* twinRankの位置をログに出力 */
-    console.log("Twin Element位置:", twinRankRect);
-    console.log("修正後の位置:", correctedTop);
+    // console.log("Twin Element位置:", twinRankRect);
+    // console.log("修正後の位置:", correctedTop);
 
     /* blueParticleContainerの位置を調整 */
     blueParticleContainer.style.position = "absolute";
