@@ -57,6 +57,11 @@ function restartPage(event) {
     window.location.reload();
 }
 
+
+/* 固定するウィンドウサイズ */
+const fixedWidth = window.innerWidth * 0.75;  
+const fixedHeight = window.innerHeight; 
+
 /* Windowsサイズを固定 */
 function lockWindowSize() {
     window.resizeTo(fixedWidth, fixedHeight);
