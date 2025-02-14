@@ -161,6 +161,7 @@ function twinRank(card, isPlayer) {
                 console.log('自分の数字カウントをリセット');
             } else {
                 opponentPreviousRank = null;
+                console.log('ここは呼ばれる？：07');
                 console.log('相手の数字カウントをリセット');
             }
 
@@ -170,6 +171,7 @@ function twinRank(card, isPlayer) {
             playerPreviousRank = card.rank;
         } else {
             opponentPreviousRank = card.rank;
+            console.log('ここは呼ばれる？：08');
         }
     }
 }
