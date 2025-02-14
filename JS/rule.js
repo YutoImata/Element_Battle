@@ -14,6 +14,9 @@ let isSelectingJoker = false;
 /* カードを出したときのエレメントポイントの計算 */
 function applyCardEffect(card, isPlayer) {
     console.log('今場に出したカード:', card); /* 出したカードのsuitとrankが出力される */
+    if (currentPlayer === 'opponent') {
+        console.log('相手がカードを出したときのエレメントポイントの計算関数が呼ばれた：４');
+    }
 
     twinSuit(card, isPlayer);
     twinRank(card, isPlayer);

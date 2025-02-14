@@ -16,10 +16,17 @@ let opponentPreviousSuit = null; /* 前回出したスート（相手）*/
 
 let playerPreviousRank = null; /* 前回出した数字（プレイヤー）*/
 let opponentPreviousRank = null; /* 前回出した数字（相手）*/
+let opponentTwinRank = null; /* 相手がTwinRankかどうかのフラグ */
+
 
 /* 同じスートを2回連続で出したかを確認する関数 */
 function twinSuit(card, isPlayer) {
     let previousSuit;
+
+    if (currentPlayer === 'opponent') {
+        console.log('相手が同じスートを2回連続で出したかを確認する関数が呼ばれた：５');
+    }
+
     if (isPlayer) {
         previousSuit = playerPreviousSuit;
     } else {
@@ -39,7 +46,7 @@ function twinSuit(card, isPlayer) {
 
     /* 同じスートが２回連続で出た場合の処理 */
     if (card.suit === previousSuit) {
-        showParticleEffect(isPlayer);
+        showParticleEffect();
         setTimeout(() => {
             let newCard = deck.draw();
             if (isPlayer) {
@@ -47,6 +54,7 @@ function twinSuit(card, isPlayer) {
                 console.log('プレイヤーがもう１枚引く');
             } else {
                 addCardToOpponentHand(newCard);
+                console.log('相手が同じスートを2回連続で出したので、もう１枚カードを引く関数が呼ばれた：５.５');
                 console.log('相手がもう１枚引く');
             }
 
@@ -68,7 +76,7 @@ function twinSuit(card, isPlayer) {
     }
 }
 
-function showParticleEffect(isPlayer) {
+function showParticleEffect() {
     let targetArea = document.getElementById('played-cards');
     let particleContainer = document.createElement("div");
     particleContainer.classList.add("particle-container");
@@ -91,6 +99,14 @@ function showParticleEffect(isPlayer) {
 /* 同じ数字を2回連続出したかどうかを判別する処理 */
 function twinRank(card, isPlayer) {
     let previousRank;
+
+    if (currentPlayer === 'opponent') {
+        console.log('相手が同じ数字を2回連続で出したかを確認する関数が呼ばれた：６');
+    }
+
+    console.log('ここは呼ばれる？：01');
+
+    
     if (isPlayer) {
         previousRank = playerPreviousRank;
     } else {
@@ -98,6 +114,9 @@ function twinRank(card, isPlayer) {
         document.getElementById('draw-card').disabled = false; /* 次にカードを引けないようにする */
         document.getElementById('play-card').disabled = true; /* そしてカードを出せるようにする */        
     }
+    
+
+    console.log('ここは呼ばれる？：02');
 
     /* Jokerの場合はリセット */
     if (card.suit === 'J' && card.rank === 'oker') {
@@ -109,21 +128,32 @@ function twinRank(card, isPlayer) {
         return;
     }
 
+    console.log('ここは呼ばれる？：03');
+
+
     /* 同じ数字が２回連続で出た場合の処理 */
     if (card.rank === previousRank) {
-        isPlayerTurn = true;
-        showBlueParticleEffectRank(isPlayer);
+        console.log('ここは呼ばれる？：04');
+
+        isPlayerTurn = false;
+        showBlueParticleEffectRank();
+        console.log('ここは呼ばれる？：05');
         setTimeout(() => {
             if (isPlayer) {
+                console.log('ここは呼ばれる？：06');
                 console.log('自分が2連続で同じ数字出した');
                 playerTurn();
                 console.log('プレイヤーがもう一回ターン');
             } else {
+                console.log('ここは呼ばれる？：06');
+                console.log(isPlayerTurn);
                 isPlayerTurn = false;
+                opponentTwinRank = true;
                 console.log('相手が2連続で同じ数字出した');
                 opponentTurn();
+                console.log('相手が同じ数字を2回連続で出したので、もう１ターン行動できる関数が呼ばれた：６.５');
+
                 console.log('相手がもう一回ターン');
-                isPlayerTurn = true;
             }
 
             if (isPlayer) {
@@ -144,7 +174,7 @@ function twinRank(card, isPlayer) {
     }
 }
 
-function showBlueParticleEffectRank(isPlayer) {
+function showBlueParticleEffectRank() {
     let targetArea = document.getElementById('played-cards');
     let blueParticleContainer = document.createElement("div");
     blueParticleContainer.classList.add("blue-particle-container");

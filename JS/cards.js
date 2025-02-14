@@ -119,6 +119,7 @@ function addCardToPlayerHand(card) {
 
 /* 相手のに手札を追加する関数 */
 function addCardToOpponentHand(card) {
+    console.log('相手にカードを追加する関数が呼ばれた：１');
     const opponentHand = document.querySelector('#opponent-hand #cards');
     const cardElement = createCardElement(card);
     opponentHand.appendChild(cardElement);

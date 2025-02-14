@@ -29,6 +29,10 @@ function startTurn() {
 function opponentTurn() {
     console.log('今はどっちのターン？', currentPlayer);
     console.log('相手のターンが開始できるかを確認する', isSelectingJoker, isPlayerTurn);
+
+    if (opponentTwinRank) {
+        isPlayerTurn = true;
+    }
     if (!isSelectingJoker && !isPlayerTurn) {
         console.log('相手のターンが開始');
         /* ここでプレイヤーの追跡の変数をどちらもリセットする */
@@ -36,6 +40,7 @@ function opponentTurn() {
         playerPlayedCard = false;
         specialCard = false; /* 特殊カードのフラグをリセット */
         
+        opponentTwinRank = false;
 
         document.getElementById('draw-card').disabled = true;
         document.getElementById('play-card').disabled = true;
@@ -47,7 +52,10 @@ function opponentTurn() {
             setTimeout(() => {
                 const card = selectCardForOpponent();
                 playOpponentCard(card);
-                endTurn();
+                console.log('敵のTwinRank：', opponentTwinRank);
+                if (!opponentTwinRank) {
+                    endTurn();
+                }
             }, 1000);
         }, 1000);
     }
@@ -56,6 +64,7 @@ function opponentTurn() {
 
  /* ターン終了時の処理 */
  function endTurn() {
+    console.log('endTurn関数が呼ばれた：last');
     updateElementPointsDisplay();
     checkForWin();
     if (currentPlayer === 'player') {
@@ -80,7 +89,7 @@ function opponentTurn() {
 
  /* 相手がランダムに手札を出す処理 */
  function selectCardForOpponent() {
-    // console.log('相手が手札を出します');
+    console.log('相手がランダムにカードを出す関数が呼ばれた：２');
     const opponentHand = document.querySelector('#opponent-hand #cards').children;
     const randomIndex = Math.floor(Math.random() * opponentHand.length);
     return opponentHand[randomIndex];
@@ -88,6 +97,7 @@ function opponentTurn() {
 
  /* 相手がカードをプレイエリアに出す処理 */
  function playOpponentCard(cardElement) {
+    console.log('相手にカードをプレイエリアに出す関数が呼ばれた：３');
     const playArea = document.querySelector('#play-area #played-cards');
     playArea.appendChild(cardElement);
     const card = new Card(cardElement.textContent[0], cardElement.textContent.slice(1));
