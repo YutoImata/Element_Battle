@@ -115,15 +115,17 @@ function twinRank(card, isPlayer) {
         showBlueParticleEffectRank(isPlayer);
         setTimeout(() => {
             if (isPlayer) {
-                // console.log('自分が2連続で同じ数字出した');
-                playerTurn();
-                // console.log('プレイヤーがもう一回ターン');
+                for (let i = 0; i < 2; i++) { /* 2回ループしてカードを引く */
+                    let newCard = deck.draw();
+                    addCardToPlayerHand(newCard);
+                }
+                // console.log('プレイヤーが２枚引く');
             } else {
-                isPlayerTurn = false;
-                // console.log('相手が2連続で同じ数字出した');
-                opponentTurn();
-                // console.log('相手がもう一回ターン');
-                isPlayerTurn = true;
+                for (let i = 0; i < 2; i++) {
+                    let newCard = deck.draw();
+                    addCardToOpponentHand(newCard);
+                }
+                // console.log('相手が２枚引く');
             }
 
             if (isPlayer) {
