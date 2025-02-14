@@ -235,6 +235,25 @@ document.addEventListener("keydown", function (event) {
     }
 });
 
+/* マウス操作によるズームの無効化 */
+document.addEventListener("wheel", function (event) {
+    if (event.ctrlKey) {
+        event.preventDefault(); /*  Ctrl + スクロールでのズームを防止 */
+    }
+}, { passive: false });
+
+document.addEventListener("gesturestart", function (event) {
+    event.preventDefault(); /*  ピンチズームの開始を防止 */
+});
+
+document.addEventListener("gesturechange", function (event) {
+    event.preventDefault(); /*  ピンチズーム中の動作を防止 */
+});
+
+document.addEventListener("gestureend", function (event) {
+    event.preventDefault(); /*  ピンチズームの終了を防止 */
+});
+
 /*  右クリックメニューの無効化 */
 document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
