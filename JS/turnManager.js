@@ -27,6 +27,7 @@ function startTurn() {
 
  /* 相手のターン */
 function opponentTurn() {
+    console.log('今はどっちのターン？', currentPlayer);
     console.log('相手のターンが開始できるかを確認する', isSelectingJoker, isPlayerTurn);
     if (!isSelectingJoker && !isPlayerTurn) {
         console.log('相手のターンが開始');
@@ -57,7 +58,13 @@ function opponentTurn() {
  function endTurn() {
     updateElementPointsDisplay();
     checkForWin();
+    if (currentPlayer === 'player') {
+        console.log('ここで自分のターンが終了します。現在currentPlayer:', currentPlayer);
+    } else {
+        console.log('ここで敵のターンが終了します。現在currentPlayer:', currentPlayer);
+    }
     changePlayer();
+    console.log('今現在のcurrentPlayerを変更しました。：', currentPlayer);
     startTurn();
  }
 
